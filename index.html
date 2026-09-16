@@ -1,110 +1,129 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>DJ Braian - Sets & Shows en Vivo</title>
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Servicios Tecnológicos & Soluciones Digitales</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
 </head>
 <body>
+    <header class="navbar">
+        <div class="logo">
+            <span class="logo-accent">&lt;/&gt;</span> TechSoluciones
+        </div>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="#servicios">Servicios</a></li>
+                <li><a href="#dj-musica">DJ & Producción</a></li>
+                <li><a href="#portafolio">Portafolio</a></li>
+                <li><a href="#contacto" class="btn-nav">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
 
-  <!-- Encabezado / Hero -->
-  <header>
-    <div class="hero-content">
-      <!-- Foto / Logo ubicada arriba del título -->
-      <img src="images/imagen1.jpg" alt="Logo / Portada DJ Braian" class="profile-pic">
-      
-      <h1 class="dj-title">DJ BRAIAN</h1>
-      <p class="tagline">Música, Show y la mejor energía para tu evento</p>
-      <a href="#contacto" class="btn-main">Consultar Fecha</a>
-    </div>
-  </header>
-
-  <main class="container">
-
-    <!-- Sobre Mí y Estilos -->
-    <section class="card">
-      <h2>🎧 Sobre Mí & Estilos</h2>
-      <p>Llevo la mejor selección musical a tu fiesta. Sets en vivo adaptados a todo tipo de eventos: cumpleaños de 15, casamientos, egresados y fiestas privadas.</p>
-      
-      <div class="genres">
-        <span class="badge">Cumbia & Reggaeton</span>
-        <span class="badge">RKT & Trap</span>
-        <span class="badge">Electrónica / House</span>
-        <span class="badge">Clásicos 80s / 90s / 2000s</span>
-      </div>
+    <section class="hero">
+        <div class="hero-content">
+            <span class="badge">Innovación & Tecnología</span>
+            <h1>Soluciones Integrales en <span class="text-gradient">Tecnología & Diseño</span></h1>
+            <p>Mantenimiento de equipos, desarrollo web profesional, diseño de marca y servicios audiovisuales / DJ para tus eventos.</p>
+            <div class="hero-buttons">
+                <a href="#servicios" class="btn btn-primary">Nuestros Servicios</a>
+                <a href="#contacto" class="btn btn-secondary">Cotizar Proyecto</a>
+            </div>
+        </div>
     </section>
 
-    <!-- Escuchá mis Sets / Demos -->
-    <section class="card">
-      <h2>🎵 Escuchá mis Sets</h2>
-      <p>Hacé clic para reproducir un enganchado demo:</p>
-      
-      <div class="audio-player">
-        <p><strong>Set Enganchado 2026 - Cumbia & RKT</strong></p>
-        <audio controls>
-          <source src="audio/set.mp3" type="audio/mpeg">
-          Tu navegador no soporta el reproductor de audio.
-        </audio>
-      </div>
+    <section id="servicios" class="container">
+        <h2 class="section-title">Servicios Técnicos & Digitales</h2>
+        <div class="grid-cards">
+            <div class="card">
+                <div class="card-icon">💻</div>
+                <h3>Reparación de PCs</h3>
+                <p>Mantenimiento preventivo y correctivo, optimización de sistema, limpieza de virus y diagnóstico de hardware.</p>
+                <a href="#contacto" class="card-link">Consultar &rarr;</a>
+            </div>
+            <div class="card">
+                <div class="card-icon">🎨</div>
+                <h3>Diseño Gráfico & Logos</h3>
+                <p>Creación de identidad visual, logotipos vectoriales, piezas publicitarias y banners para redes sociales.</p>
+                <a href="#contacto" class="card-link">Consultar &rarr;</a>
+            </div>
+            <div class="card">
+                <div class="card-icon">🌐</div>
+                <h3>Desarrollo Web</h3>
+                <p>Páginas web modernas, rápidas y adaptadas a móviles, listas para posicionar tu negocio en internet.</p>
+                <a href="#contacto" class="card-link">Consultar &rarr;</a>
+            </div>
+        </div>
     </section>
 
-    <!-- Galería de Eventos -->
-    <section class="card">
-      <h2>📸 Galería de Eventos</h2>
-      <div class="gallery-grid">
-        <img src="images/evento1.jpg" alt="Fiesta en vivo" onclick="abrirGaleria(0)">
-        <img src="images/evento2.jpg" alt="Cabina de DJ Braian" onclick="abrirGaleria(1)">
-        <img src="images/evento3.jpg" alt="Luces y pista de baile" onclick="abrirGaleria(2)">
-      </div>
+    <section id="dj-musica" class="container">
+        <div class="dj-banner">
+            <div class="dj-info">
+                <span class="badge-accent">Nuevo Servicio</span>
+                <h2>DJ & Producción Musical</h2>
+                <p>Ambientación de eventos, sets en vivo, edición de audio, remezclas y producción musical personalizada para tus proyectos visuales o eventos especiales.</p>
+                <ul class="dj-list">
+                    <li>🎧 DJ para eventos y fiestas privadas</li>
+                    <li>🎚️ Edición y limpieza de pistas de audio</li>
+                    <li>🔊 Sonorización y ambientación musical</li>
+                </ul>
+                <a href="#contacto" class="btn btn-primary">Contratar DJ / Audio</a>
+            </div>
+        </div>
     </section>
 
-    <!-- Cotizador y Contacto por WhatsApp -->
-    <section id="contacto" class="card">
-      <h2>📲 Cotizá tu Evento</h2>
-      <p>Completá los datos para enviarle un mensaje directo a Braian por WhatsApp:</p>
-
-      <form id="formCotizar">
-        <label for="nombre">Tu Nombre:</label>
-        <input type="text" id="nombre" placeholder="Ej: María Rosa" required>
-
-        <label for="tipoEvento">Tipo de Evento:</label>
-        <select id="tipoEvento">
-          <option value="Cumpleaños de 15">Cumpleaños de 15</option>
-          <option value="Casamiento">Casamiento</option>
-          <option value="Fiesta Privada">Fiesta Privada / Cumpleaños</option>
-          <option value="Evento Empresarial">Evento Empresarial</option>
-          <option value="Otro">Otro</option>
-        </select>
-
-        <label for="fecha">Fecha del Evento:</label>
-        <input type="date" id="fecha" required>
-
-        <label for="lugar">Lugar / Localidad:</label>
-        <input type="text" id="lugar" placeholder="Ej: Tapso / Catamarca" required>
-
-        <button type="button" onclick="enviarWhatsapp()" class="btn-whatsapp">
-          🟢 Enviar Consulta por WhatsApp
-        </button>
-      </form>
+    <section id="portafolio" class="container">
+        <h2 class="section-title">Portafolio & Galería</h2>
+        <div class="portfolio-grid">
+            <div class="portfolio-item">
+                <div class="img-placeholder">Proyectos Web & Apps</div>
+                <h4>Diseños Web Personalizados</h4>
+            </div>
+            <div class="portfolio-item">
+                <div class="img-placeholder">Identidad Visual & Logos</div>
+                <h4>Branding & Marcas</h4>
+            </div>
+            <div class="portfolio-item">
+                <div class="img-placeholder">Sets & Ediciones DJ</div>
+                <h4>Producción de Audio</h4>
+            </div>
+        </div>
     </section>
 
-  </main>
+    <section id="contacto" class="container">
+        <div class="contact-card">
+            <h2>¿Tenés un proyecto en mente?</h2>
+            <p>Escribinos para cotizar mantenimiento, diseño web, marcas o contrataciones para eventos.</p>
+            <form id="contactForm">
+                <div class="form-group">
+                    <input type="text" id="nombre" placeholder="Tu Nombre" required>
+                </div>
+                <div class="form-group">
+                    <input type="email" id="email" placeholder="Tu Email" required>
+                </div>
+                <div class="form-group">
+                    <select id="servicio">
+                        <option value="reparacion">Reparación de Computadoras</option>
+                        <option value="diseno">Diseño Gráfico & Logos</option>
+                        <option value="web">Desarrollo Web</option>
+                        <option value="dj">Servicios de DJ / Audio</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <textarea id="mensaje" placeholder="Detalles de la consulta..." rows="4" required></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary btn-block">Enviar Consulta</button>
+            </form>
+            <div id="formResponse" class="response-message"></div>
+        </div>
+    </section>
 
-  <footer>
-    <p>© 2026 DJ Braian - Todos los derechos reservados.</p>
-  </footer>
+    <footer>
+        <p>&copy; 2026 TechSoluciones. Todos los derechos reservados.</p>
+    </footer>
 
-  <!-- Modal para ver fotos ampliadas -->
-  <div id="modalFoto" class="modal">
-    <span class="close-btn" onclick="cerrarImagen()">&times;</span>
-    <button class="nav-btn prev-btn" onclick="cambiarFoto(-1)">&#10094;</button>
-    <div class="modal-content-img">
-      <img id="imgModal" src="" alt="Foto ampliada">
-    </div>
-    <button class="nav-btn next-btn" onclick="cambiarFoto(1)">&#10095;</button>
-  </div>
-
-  <script src="script.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
