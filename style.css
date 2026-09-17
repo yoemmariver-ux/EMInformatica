@@ -1,15 +1,13 @@
-/* Variables de Diseño e Identidad de Marca */
 :root {
-    --primary-color: #E31B23;    /* Rojo corporativo de ES Informática */
-    --secondary-color: #FFFFFF;  /* Blanco puro */
-    --bg-dark: #121214;          /* Fondo oscuro moderno */
-    --bg-card: #1E1E24;          /* Fondo de tarjetas */
-    --text-main: #FFFFFF;        /* Texto principal en blanco */
-    --text-muted: #A0A0AA;       /* Texto secundario/gris */
+    --primary-color: #E31B23;    
+    --secondary-color: #FFFFFF;  
+    --bg-dark: #121214;          
+    --bg-card: #1E1E24;          
+    --text-main: #FFFFFF;        
+    --text-muted: #A0A0AA;       
     --transition: all 0.3s ease;
 }
 
-/* Reset General */
 * {
     margin: 0;
     padding: 0;
@@ -24,7 +22,6 @@ body {
     line-height: 1.6;
 }
 
-/* Componentes de Botones */
 .btn {
     display: inline-block;
     padding: 0.8rem 2rem;
@@ -34,6 +31,7 @@ body {
     transition: var(--transition);
     cursor: pointer;
     border: none;
+    text-align: center;
 }
 
 .btn-primary {
@@ -63,7 +61,6 @@ body {
     display: block;
 }
 
-/* Títulos de sección */
 .section-title {
     text-align: center;
     margin-bottom: 4rem;
@@ -100,7 +97,6 @@ body {
     display: flex;
     justify-content: space-between;
     height: 80px;
-    z-index: 1;
     width: 100%;
     max-width: 1200px;
     padding: 0 24px;
@@ -127,7 +123,6 @@ body {
     display: flex;
     align-items: center;
     list-style: none;
-    text-align: center;
 }
 
 .nav-links {
@@ -142,7 +137,6 @@ body {
     color: var(--primary-color);
 }
 
-/* Menú móvil */
 .menu-toggle {
     display: none;
     cursor: pointer;
@@ -157,22 +151,46 @@ body {
     background-color: var(--secondary-color);
 }
 
-/* Hero Section */
+/* Portada Estilo Video en Bucle */
 .hero-section {
-    background: linear-gradient(135deg, rgba(18,18,20,0.9) 0%, rgba(18,18,20,0.7) 100%), 
-                url('https://unsplash.com') no-repeat center center/cover;
+    position: relative;
     height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 0 24px;
+    overflow: hidden;
     text-align: center;
+    padding: 0 24px;
+}
+
+.hero-video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: -2;
+    transform: translate(-50%, -50%);
+    object-fit: cover;
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle, rgba(18,18,20,0.6) 0%, rgba(18,18,20,0.95) 100%);
+    z-index: -1;
 }
 
 .hero-content h1 {
     font-size: 3.5rem;
     margin-bottom: 1.5rem;
     font-weight: 700;
+    text-shadow: 0 4px 10px rgba(0,0,0,0.5);
 }
 
 .hero-content p {
@@ -183,10 +201,10 @@ body {
 }
 
 .hero-buttons .btn {
-    margin: 0 10px;
+    margin: 5px 10px;
 }
 
-/* Sección de Servicios */
+/* Servicios */
 .services-section {
     max-width: 1200px;
     margin: 0 auto;
@@ -211,7 +229,7 @@ body {
 .service-card:hover {
     transform: translateY(-10px);
     border-color: var(--primary-color);
-    box-shadow: 0 10px 20px rgba(227, 27, 35, 0.1);
+    box-shadow: 0 10px 20px rgba(227, 27, 35, 0.15);
 }
 
 .icon-box {
@@ -227,10 +245,9 @@ body {
 
 .service-card p {
     color: var(--text-muted);
-    font-size: 0.95rem;
 }
 
-/* Sección Sobre Nosotros */
+/* Nosotros */
 .about-section {
     background-color: #16161a;
     padding: 100px 24px;
@@ -252,10 +269,9 @@ body {
 .about-text p {
     color: var(--text-muted);
     font-size: 1.1rem;
-    margin-bottom: 1.5rem;
 }
 
-/* Sección de Contacto */
+/* Contacto y Formulario */
 .contact-section {
     max-width: 1200px;
     margin: 0 auto;
@@ -290,12 +306,6 @@ body {
     margin-right: 15px;
 }
 
-.info-item p {
-    margin-bottom: 0;
-    color: var(--text-main);
-    font-weight: 600;
-}
-
 .contact-form-container {
     background-color: var(--bg-card);
     padding: 40px;
@@ -317,7 +327,6 @@ body {
     border-radius: 4px;
     font-family: inherit;
     font-size: 1rem;
-    transition: var(--transition);
 }
 
 .form-group input:focus,
@@ -326,17 +335,48 @@ body {
     border-color: var(--primary-color);
 }
 
-/* Pie de página */
+/* Footer y Estilos de Redes Sociales Vectoriales */
 .footer {
     background-color: #0b0b0c;
     text-align: center;
-    padding: 30px 24px;
+    padding: 40px 24px;
     border-top: 1px solid #2A2A30;
     font-size: 0.9rem;
     color: var(--text-muted);
 }
 
-/* Consultas Responsivas (Mobile & Tablet) */
+.footer-socials {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    margin-bottom: 20px;
+}
+
+.social-icon {
+    font-size: 1.8rem;
+    color: var(--text-muted);
+    transition: var(--transition);
+    text-decoration: none;
+}
+
+.social-icon.whatsapp-icon:hover {
+    color: #25D366;
+    filter: drop-shadow(0 0 8px rgba(37, 211, 102, 0.5));
+    transform: scale(1.2);
+}
+
+.social-icon.instagram-icon:hover {
+    color: #E1306C;
+    filter: drop-shadow(0 0 8px rgba(225, 48, 108, 0.5));
+    transform: scale(1.2);
+}
+
+.social-icon.facebook-icon:hover {
+    color: #1877F2;
+    filter: drop-shadow(0 0 8px rgba(24, 119, 242, 0.5));
+    transform: scale(1.2);
+}
+
 @media screen and (max-width: 960px) {
     .nav-menu {
         position: fixed;
@@ -347,27 +387,10 @@ body {
         width: 100%;
         height: calc(100vh - 80px);
         transition: var(--transition);
-        z-index: 99;
     }
-
-    .nav-menu.active {
-        left: 0;
-    }
-
-    .nav-links {
-        padding: 2rem;
-        width: 100%;
-        display: block;
-    }
-
-    .menu-toggle {
-        display: block;
-    }
-
-    #mobile-menu.is-active .bar:nth-child(2) { opacity: 0; }
-    #mobile-menu.is-active .bar:nth-child(1) { transform: translateY(8px) rotate(45deg); }
-    #mobile-menu.is-active .bar:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
-
-    .hero-content h1 { font-size: 2.3rem; }
+    .nav-menu.active { left: 0; }
+    .nav-links { padding: 2rem; width: 100%; display: block; }
+    .menu-toggle { display: block; }
+    .hero-content h1 { font-size: 2.2rem; }
     .contact-container { grid-template-columns: 1fr; }
 }

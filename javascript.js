@@ -1,4 +1,4 @@
-// Lógica para el menú móvil desplegable (Hamburguesa)
+// Menú móvil
 const menu = document.querySelector('#mobile-menu');
 const menuLinks = document.querySelector('.nav-menu');
 
@@ -7,7 +7,6 @@ menu.addEventListener('click', function() {
     menuLinks.classList.toggle('active');
 });
 
-// Cerrar el menú automáticamente al hacer clic en cualquier enlace de navegación
 const navItems = document.querySelectorAll('.nav-links');
 navItems.forEach(item => {
     item.addEventListener('click', () => {
@@ -16,25 +15,25 @@ navItems.forEach(item => {
     });
 });
 
-// Validación básica y envío simulado del Formulario de Contacto
+// Envío directo al WhatsApp extraído del QR
 const contactForm = document.getElementById('contactForm');
 
 contactForm.addEventListener('submit', function(e) {
-    e.preventDefault(); // Previene que la página se recargue
+    e.preventDefault();
 
-    // Obtener los datos de los inputs
     const name = document.getElementById('name').value.trim();
     const email = document.getElementById('email').value.trim();
     const message = document.getElementById('message').value.trim();
 
     if(name === "" || email === "" || message === "") {
-        alert("Por favor, completa todos los campos del formulario.");
+        alert("Por favor, rellena todos los campos.");
         return;
     }
 
-    // Simulación de envío exitoso
-    alert(`¡Muchas gracias por comunicarte, ${name}! Hemos recibido tu mensaje correctamente. Nos contactaremos a ${email} a la brevedad.`);
-    
-    // Limpiar el formulario
+    const phoneNumber = "5493834594343"; 
+    const textMessage = `¡Hola ES Informática!%0A%0AMi nombre es: *${name}*%0ACorreo de contacto: _${email}_%0A%0A*Consulta o servicio solicitado:*%0A${message}`;
+    const whatsappUrl = `https://wa.me{phoneNumber}?text=${textMessage}`;
+
+    window.open(whatsappUrl, '_blank');
     contactForm.reset();
 });
