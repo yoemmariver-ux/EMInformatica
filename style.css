@@ -216,9 +216,8 @@ body {
 .hero-buttons .btn {
     margin: 5px 10px;
 }
-
 /* ==========================================================================
-   5. SECCIÓN DE SERVICIOS (TARJETAS E IMÁGENES)
+   5. SECCIÓN DE SERVICIOS
    ========================================================================== */
 .services-section {
     max-width: 1200px;
@@ -353,14 +352,37 @@ body {
     font-size: 1rem;
 }
 
+/* Estilos específicos para el nuevo menú de selección */
+.form-group select {
+    width: 100%;
+    padding: 12px 16px;
+    background-color: var(--bg-dark);
+    border: 1px solid #2A2A30;
+    color: var(--text-main);
+    border-radius: 4px;
+    font-family: inherit;
+    font-size: 1rem;
+    appearance: none; 
+    background-image: url("data:image/svg+xml;utf8,<svg fill='white' height='24' viewBox='0 0 24 24' width='24' xmlns='http://w3.org'><path d='M7 10l5 5 5-5z'/><path d='M0 0h24v24H0z' fill='none'/></svg>");
+    background-repeat: no-repeat;
+    background-position: right 16px center;
+    cursor: pointer;
+}
+
 .form-group input:focus,
-.form-group textarea:focus {
+.form-group textarea:focus,
+.form-group select:focus {
     outline: none;
     border-color: var(--primary-color);
 }
 
+.form-group select option {
+    background-color: var(--bg-card);
+    color: var(--text-main);
+}
+
 /* ==========================================================================
-   8. FOOTER Y REDES SOCIALES POR CÓDIGO (INFALIBLES EN GITHUB)
+   8. FOOTER Y REDES SOCIALES POR CÓDIGO
    ========================================================================== */
 .footer {
     background-color: #0b0b0c;
@@ -393,11 +415,10 @@ body {
 .social-btn svg {
     width: 22px;
     height: 22px;
-    fill: #FFFFFF; /* Color por defecto blanco */
+    fill: #FFFFFF; 
     transition: var(--transition);
 }
 
-/* Efectos Hover de Redes Sociales */
 .social-btn:hover {
     transform: translateY(-4px);
 }
@@ -437,11 +458,9 @@ body {
         height: calc(100vh - 80px);
         transition: var(--transition);
     }
-    
-    .nav-menu.active { 
-        left: 0; 
-    }
-    
-    .nav-links { 
-        padding: 2rem; 
-        width: 100%; 
+    .nav-menu.active { left: 0; }
+    .nav-links { padding: 2rem; width: 100%; display: block; }
+    .menu-toggle { display: block; }
+    .hero-content h1 { font-size: 2.2rem; }
+    .contact-container { grid-template-columns: 1fr; }
+}
