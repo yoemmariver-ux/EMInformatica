@@ -15,31 +15,27 @@ navItems.forEach(item => {
     });
 });
 
-// Lógica de Envío del Formulario Modificado a WhatsApp
+// Lógica de Envío del Formulario DIRECTO con el número incrustado de forma fija
 const contactForm = document.getElementById('contactForm');
 
 contactForm.addEventListener('submit', function(e) {
     e.preventDefault(); // Evita que la página se recargue
 
-    // Capturar datos del nuevo formulario
+    // Capturar datos del formulario
     const name = document.getElementById('name').value.trim();
     const category = document.getElementById('category').value;
     const message = document.getElementById('message').value.trim();
 
-    // Validación preventiva por si acaso
     if(name === "" || category === "" || message === "") {
         alert("Por favor, completa todos los campos del formulario.");
         return;
     }
 
-    // NÚMERO CORREGIDO PARA LA API INTERNACIONAL DESBLOQUEADA DE WHATSAPP
-    const phoneNumber = "541164483503"; 
-
     // Formatear el mensaje estructurado
     const textMessage = `¡Hola ES Informática!%0A%0AMi nombre es: *${name}*%0A%0A*Servicio solicitado:*%0A_ ${category} _%0A%0A*Detalles de la consulta:*%0A${message}`;
 
-    // Crear el enlace universal desbloqueado
-    const whatsappUrl = `https://wa.me{phoneNumber}?text=${textMessage}`;
+    // Ponemos el número fijo directamente en la URL para que no dependa de variables intermedias
+    const whatsappUrl = `https://wa.me{textMessage}`;
 
     // Abrir la ventana del chat de inmediato
     window.open(whatsappUrl, '_blank');
