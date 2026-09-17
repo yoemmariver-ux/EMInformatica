@@ -1,19 +1,13 @@
-/* ==========================================================================
-   1. VARIABLES DE DISEÑO E IDENTIDAD DE MARCA
-   ========================================================================== */
 :root {
-    --primary-color: #E31B23;    /* Rojo corporativo de ES Informática */
-    --secondary-color: #FFFFFF;  /* Blanco puro */
-    --bg-dark: #121214;          /* Fondo oscuro moderno */
-    --bg-card: #1E1E24;          /* Fondo de tarjetas */
-    --text-main: #FFFFFF;        /* Texto principal */
-    --text-muted: #A0A0AA;       /* Texto secundario / Gris */
-    --transition: all 0.3s ease; /* Transiciones globales suaves */
+    --primary-color: #E31B23;    
+    --secondary-color: #FFFFFF;  
+    --bg-dark: #121214;          
+    --bg-card: #1E1E24;          
+    --text-main: #FFFFFF;        
+    --text-muted: #A0A0AA;       
+    --transition: all 0.3s ease; 
 }
 
-/* ==========================================================================
-   2. RESET GENERAL Y ESTILOS BASE
-   ========================================================================== */
 * {
     margin: 0;
     padding: 0;
@@ -28,7 +22,6 @@ body {
     line-height: 1.6;
 }
 
-/* Componentes de Botones */
 .btn {
     display: inline-block;
     padding: 0.8rem 2rem;
@@ -68,7 +61,6 @@ body {
     display: block;
 }
 
-/* Encabezados y Títulos de Sección */
 .section-title {
     text-align: center;
     margin-bottom: 4rem;
@@ -87,9 +79,7 @@ body {
     border-radius: 2px;
 }
 
-/* ==========================================================================
-   3. BARRA DE NAVEGACIÓN (NAVBAR)
-   ========================================================================== */
+/* Navbar */
 .navbar {
     background-color: rgba(18, 18, 20, 0.95);
     height: 80px;
@@ -147,7 +137,6 @@ body {
     color: var(--primary-color);
 }
 
-/* Menú Hamburguesa para Móviles */
 .menu-toggle {
     display: none;
     cursor: pointer;
@@ -162,9 +151,7 @@ body {
     background-color: var(--secondary-color);
 }
 
-/* ==========================================================================
-   4. PORTADA CON VIDEO DE FONDO (HERO SECTION)
-   ========================================================================== */
+/* Portada Estilo Video en Bucle */
 .hero-section {
     position: relative;
     height: 100vh;
@@ -216,9 +203,8 @@ body {
 .hero-buttons .btn {
     margin: 5px 10px;
 }
-/* ==========================================================================
-   5. SECCIÓN DE SERVICIOS
-   ========================================================================== */
+
+/* Servicios */
 .services-section {
     max-width: 1200px;
     margin: 0 auto;
@@ -272,9 +258,7 @@ body {
     box-shadow: 0 10px 20px rgba(227, 27, 35, 0.15);
 }
 
-/* ==========================================================================
-   6. SECCIÓN SOBRE NOSOTROS
-   ========================================================================== */
+/* Nosotros */
 .about-section {
     background-color: #16161a;
     padding: 100px 24px;
@@ -298,9 +282,7 @@ body {
     font-size: 1.1rem;
 }
 
-/* ==========================================================================
-   7. SECCIÓN DE CONTACTO Y FORMULARIO
-   ========================================================================== */
+/* Contacto y Formulario */
 .contact-section {
     max-width: 1200px;
     margin: 0 auto;
@@ -352,7 +334,6 @@ body {
     font-size: 1rem;
 }
 
-/* Estilos específicos para el nuevo menú de selección */
 .form-group select {
     width: 100%;
     padding: 12px 16px;
@@ -381,9 +362,7 @@ body {
     color: var(--text-main);
 }
 
-/* ==========================================================================
-   8. FOOTER Y REDES SOCIALES POR CÓDIGO
-   ========================================================================== */
+/* Footer Sólido Adaptado para Tus Imágenes Locales Fijas */
 .footer {
     background-color: #0b0b0c;
     text-align: center;
@@ -400,7 +379,7 @@ body {
     margin-bottom: 20px;
 }
 
-.social-btn {
+.social-box {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -410,43 +389,22 @@ body {
     width: 50px;
     height: 50px;
     transition: var(--transition);
+    overflow: hidden;
+    padding: 10px;
 }
 
-.social-btn svg {
-    width: 22px;
-    height: 22px;
-    fill: #FFFFFF; 
-    transition: var(--transition);
+.social-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
 }
 
-.social-btn:hover {
+.social-box:hover {
     transform: translateY(-4px);
+    border-color: var(--primary-color);
+    box-shadow: 0 0 12px rgba(227, 27, 35, 0.4);
 }
 
-.social-btn.whatsapp:hover {
-    border-color: #25D366;
-    background-color: rgba(37, 211, 102, 0.1);
-    box-shadow: 0 0 12px rgba(37, 211, 102, 0.4);
-}
-.social-btn.whatsapp:hover svg { fill: #25D366; }
-
-.social-btn.instagram:hover {
-    border-color: #E1306C;
-    background-color: rgba(225, 48, 108, 0.1);
-    box-shadow: 0 0 12px rgba(225, 48, 108, 0.4);
-}
-.social-btn.instagram:hover svg { fill: #E1306C; }
-
-.social-btn.facebook:hover {
-    border-color: #1877F2;
-    background-color: rgba(24, 119, 242, 0.1);
-    box-shadow: 0 0 12px rgba(24, 119, 242, 0.4);
-}
-.social-btn.facebook:hover svg { fill: #1877F2; }
-
-/* ==========================================================================
-   9. MEDIA QUERIES (DISEÑO RESPONSIVO)
-   ========================================================================== */
 @media screen and (max-width: 960px) {
     .nav-menu {
         position: fixed;

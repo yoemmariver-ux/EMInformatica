@@ -1,16 +1,12 @@
-// ==========================================================================
-// 1. CONTROL DEL MENÚ DE NAVEGACIÓN MÓVIL (HAMBURGUESA)
-// ==========================================================================
+// Menú móvil responsivo (Hamburguesa)
 const menu = document.querySelector('#mobile-menu');
 const menuLinks = document.querySelector('.nav-menu');
 
-// Alternar estados visuales del menú al hacer clic en el icono móvil
 menu.addEventListener('click', function() {
     menu.classList.toggle('is-active');
     menuLinks.classList.toggle('active');
 });
 
-// Cerrar el menú desplegable de forma automática al presionar un enlace
 const navItems = document.querySelectorAll('.nav-links');
 navItems.forEach(item => {
     item.addEventListener('click', () => {
@@ -18,37 +14,36 @@ navItems.forEach(item => {
         menuLinks.classList.remove('active');
     });
 });
-// ==========================================================================
-// 2. LOGICA DE ENVÍO DEL FORMULARIO DIRECTO A WHATSAPP
-// ==========================================================================
+
+// Lógica de Envío del Formulario Modificado a WhatsApp
 const contactForm = document.getElementById('contactForm');
 
 contactForm.addEventListener('submit', function(e) {
-    e.preventDefault(); // Detener el comportamiento de recarga por defecto
+    e.preventDefault(); // Evita que la página se recargue
 
-    // Capturar y limpiar los espacios en blanco de los datos del formulario
+    // Capturar datos del nuevo formulario
     const name = document.getElementById('name').value.trim();
     const category = document.getElementById('category').value;
     const message = document.getElementById('message').value.trim();
 
-    // Validación de seguridad para campos vacíos
+    // Validación preventiva por si acaso
     if(name === "" || category === "" || message === "") {
         alert("Por favor, completa todos los campos del formulario.");
         return;
     }
 
-    // FORMATO INTERNACIONAL CORRECTO: Sin prefijo 9, sin espacios ni signos +.
+    // NÚMERO CORREGIDO PARA LA API INTERNACIONAL DESBLOQUEADA DE WHATSAPP
     const phoneNumber = "541164483503"; 
 
-    // Estructuración del mensaje de texto usando formato codificado para URLs (%0A = Enter)
+    // Formatear el mensaje estructurado
     const textMessage = `¡Hola ES Informática!%0A%0AMi nombre es: *${name}*%0A%0A*Servicio solicitado:*%0A_ ${category} _%0A%0A*Detalles de la consulta:*%0A${message}`;
 
-    // Construcción del enlace final para la API de redirección universal de WhatsApp
+    // Crear el enlace universal desbloqueado
     const whatsappUrl = `https://wa.me{phoneNumber}?text=${textMessage}`;
 
-    // Abrir de forma inmediata la ventana de chat con el texto preestablecido
+    // Abrir la ventana del chat de inmediato
     window.open(whatsappUrl, '_blank');
     
-    // Limpiar los campos del formulario de contacto para una nueva entrada
+    // Limpiar el formulario
     contactForm.reset();
 });
