@@ -422,3 +422,10 @@ body {
     .hero-content h1 { font-size: 2.2rem; }
     .contact-container { grid-template-columns: 1fr; }
 }
+/* Forzar al logotipo oscuro de la barra de navegación a iluminarse en blanco brillante */
+.nav-logo img {
+    height: 50px;
+    margin-right: 10px;
+    object-fit: contain;
+    filter: brightness(0) invert(1); /* Aplica el filtro de inversión de color */
+}
