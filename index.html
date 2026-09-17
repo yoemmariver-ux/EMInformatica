@@ -8,8 +8,6 @@
     <link rel="preconnect" href="https://googleapis.com">
     <link rel="preconnect" href="https://gstatic.com" crossorigin>
     <link href="https://googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
-    <!-- Iconos de FontAwesome para servicios y redes sociales -->
-    <link rel="stylesheet" href="https://cloudflare.com">
 </head>
 <body>
 
@@ -52,40 +50,58 @@
         </div>
     </header>
 
-    <!-- Sección de Servicios -->
+    <!-- Sección de Servicios con Imágenes Incorporadas -->
     <section id="servicios" class="services-section">
         <div class="section-title">
             <h2>Nuestros Servicios</h2>
             <div class="underline"></div>
         </div>
         <div class="services-grid">
+            <!-- Servicio 1 -->
             <div class="service-card">
-                <div class="icon-box"><i class="fa-solid fa-laptop-medical"></i></div>
+                <div class="card-image-container">
+                    <img src="servicio-tecnico.png" alt="Servicio Técnico">
+                </div>
                 <h3>Servicio Técnico</h3>
                 <p>Reparación integral de computadoras, notebooks y hardware. Diagnóstico certero y repuestos de calidad.</p>
             </div>
+            <!-- Servicio 2 -->
             <div class="service-card">
-                <div class="icon-box"><i class="fa-solid fa-screwdriver-wrench"></i></div>
+                <div class="card-image-container">
+                    <img src="mantenimiento.png" alt="Mantenimiento">
+                </div>
                 <h3>Mantenimiento</h3>
                 <p>Optimización preventiva y correctiva de sistemas operativos, limpieza interna física y remoción de malware.</p>
             </div>
+            <!-- Servicio 3 -->
             <div class="service-card">
-                <div class="icon-box"><i class="fa-solid fa-code"></i></div>
+                <div class="card-image-container">
+                    <img src="creacion-de-paginas-web.png" alt="Creación de Páginas Web">
+                </div>
                 <h3>Creación de Páginas Web</h3>
                 <p>Diseño y desarrollo de sitios web profesionales, tiendas online y landing pages autoadministrables.</p>
             </div>
+            <!-- Servicio 4 -->
             <div class="service-card">
-                <div class="icon-box"><i class="fa-solid fa-scanner-image"></i></div>
+                <div class="card-image-container">
+                    <img src="digitalizacion-de-imagenes.png" alt="Digitalización de Imágenes">
+                </div>
                 <h3>Digitalización de Imágenes</h3>
                 <p>Conversión de fotografías analógicas, documentos y archivos físicos a formatos digitales de alta fidelidad.</p>
             </div>
+            <!-- Servicio 5 -->
             <div class="service-card">
-                <div class="icon-box"><i class="fa-solid fa-video"></i></div>
+                <div class="card-image-container">
+                    <img src="edicion-de-video.png" alt="Edición de Video">
+                </div>
                 <h3>Edición de Video</h3>
                 <p>Montaje y postproducción audiovisual profesional para redes sociales, publicidad, eventos y empresas.</p>
             </div>
+            <!-- Servicio 6 -->
             <div class="service-card">
-                <div class="icon-box"><i class="fa-solid fa-compact-disc"></i></div>
+                <div class="card-image-container">
+                    <img src="servicio-de-dj-y-sonido.png" alt="Servicio de DJ y Sonido">
+                </div>
                 <h3>Servicio de DJ y Sonido</h3>
                 <p>Ambientación musical profesional, equipamiento de audio de última generación e iluminación para todo tipo de eventos.</p>
             </div>
@@ -114,12 +130,10 @@
                 <h3>¿Tienes alguna consulta?</h3>
                 <p>Completa el formulario y te redirigiremos de inmediato a nuestro WhatsApp con toda tu información lista para procesar tu presupuesto.</p>
                 <div class="info-item">
-                    <i class="fa-solid fa-envelope"></i>
-                    <p>contacto@esinformatica.com</p>
+                    <p><strong>Email:</strong> contacto@esinformatica.com</p>
                 </div>
                 <div class="info-item">
-                    <i class="fa-solid fa-phone"></i>
-                    <p>+54 9 383 459-4343</p>
+                    <p><strong>Teléfono:</strong> +54 9 383 459-4343</p>
                 </div>
             </div>
             <div class="contact-form-container">
@@ -133,28 +147,22 @@
                     <div class="form-group">
                         <textarea id="message" rows="5" placeholder="Cuéntanos qué servicio necesitas y los detalles de tu equipo o proyecto..." required></textarea>
                     </div>
-                    <button type="submit" class="btn btn-primary btn-block"><i class="fa-brands fa-whatsapp"></i> Enviar a WhatsApp</button>
+                    <button type="submit" class="btn btn-primary btn-block">Enviar a WhatsApp</button>
                 </form>
             </div>
         </div>
     </section>
 
-    <!-- Footer / Pie de página con Iconos de Código de Alta Calidad -->
+    <!-- Footer con Iconos de Código Directo e Infalibles para GitHub Pages -->
     <footer class="footer">
         <div class="footer-socials">
-            <a href="https://wa.me" target="_blank" class="social-icon whatsapp-icon">
-                <i class="fa-brands fa-whatsapp"></i>
+            <!-- SVG de WhatsApp -->
+            <a href="https://wa.me" target="_blank" class="social-btn whatsapp">
+                <svg viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.06 5.348 5.397.01 12.008.01c3.202.001 6.212 1.246 8.477 3.513 2.266 2.268 3.507 5.28 3.505 8.484-.004 6.657-5.34 11.997-11.953 11.997-2.005-.001-3.973-.502-5.717-1.454L0 24zm6.59-4.846c1.6.95 3.188 1.449 4.825 1.451 5.436 0 9.86-4.37 9.864-9.799.002-2.623-1.023-5.086-2.884-6.948C16.636 2.005 14.17 1.01 11.55 1.01c-5.44 0-9.866 4.372-9.87 9.802 0 1.698.459 3.355 1.327 4.866l-.993 3.63 3.733-.966zm10.422-4.63c-.27-.135-1.602-.783-1.85-.873-.247-.09-.427-.135-.607.135-.18.27-.697.873-.855 1.058-.158.18-.315.202-.586.067-1.144-.572-1.923-.94-2.686-1.624-.616-.554-1.02-1.24-1.14-1.443-.12-.203-.013-.313.12-.447.122-.12.27-.315.405-.473.135-.158.18-.27.27-.45.09-.18.045-.338-.023-.473-.068-.135-.607-1.463-.832-2.003-.22-.528-.44-.456-.607-.464-.158-.006-.338-.007-.518-.007-.18 0-.473.068-.72.338-.248.27-.945.923-.945 2.25s.967 2.61 1.103 2.79c.135.18 1.902 2.86 4.608 3.9 1.114.429 1.902.689 2.548.894.664.211 1.267.181 1.745.11.532-.08 1.602-.653 1.827-1.283.225-.63.225-1.17.157-1.283-.067-.113-.247-.18-.517-.315z"/></svg>
             </a>
-            <a href="https://instagram.com" target="_blank" class="social-icon instagram-icon">
-                <i class="fa-brands fa-instagram"></i>
+            <!-- SVG de Instagram -->
+            <a href="https://instagram.com" target="_blank" class="social-btn instagram">
+                <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.051.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
             </a>
-            <a href="https://facebook.com" target="_blank" class="social-icon facebook-icon">
-                <i class="fa-brands fa-facebook-f"></i>
-            </a>
-        </div>
-        <p>&copy; 2026 ES Informática. Todos los derechos reservados. | Diseño y Servicio Técnico Profesional.</p>
-    </footer>
-
-    <script src="javascript.js"></script>
-</body>
-</html>
+            <!-- SVG de Facebook -->
+            <a href="https://facebook.com" target="_blank" class="social-btn facebook">

@@ -1,13 +1,19 @@
+/* ==========================================================================
+   1. VARIABLES DE DISEÑO E IDENTIDAD DE MARCA
+   ========================================================================== */
 :root {
-    --primary-color: #E31B23;    
-    --secondary-color: #FFFFFF;  
-    --bg-dark: #121214;          
-    --bg-card: #1E1E24;          
-    --text-main: #FFFFFF;        
-    --text-muted: #A0A0AA;       
-    --transition: all 0.3s ease;
+    --primary-color: #E31B23;    /* Rojo corporativo de ES Informática */
+    --secondary-color: #FFFFFF;  /* Blanco puro */
+    --bg-dark: #121214;          /* Fondo oscuro moderno */
+    --bg-card: #1E1E24;          /* Fondo de tarjetas */
+    --text-main: #FFFFFF;        /* Texto principal */
+    --text-muted: #A0A0AA;       /* Texto secundario / Gris */
+    --transition: all 0.3s ease; /* Transiciones globales suaves */
 }
 
+/* ==========================================================================
+   2. RESET GENERAL Y ESTILOS BASE
+   ========================================================================== */
 * {
     margin: 0;
     padding: 0;
@@ -22,6 +28,7 @@ body {
     line-height: 1.6;
 }
 
+/* Componentes de Botones */
 .btn {
     display: inline-block;
     padding: 0.8rem 2rem;
@@ -61,6 +68,7 @@ body {
     display: block;
 }
 
+/* Encabezados y Títulos de Sección */
 .section-title {
     text-align: center;
     margin-bottom: 4rem;
@@ -79,7 +87,9 @@ body {
     border-radius: 2px;
 }
 
-/* Navbar */
+/* ==========================================================================
+   3. BARRA DE NAVEGACIÓN (NAVBAR)
+   ========================================================================== */
 .navbar {
     background-color: rgba(18, 18, 20, 0.95);
     height: 80px;
@@ -137,6 +147,7 @@ body {
     color: var(--primary-color);
 }
 
+/* Menú Hamburguesa para Móviles */
 .menu-toggle {
     display: none;
     cursor: pointer;
@@ -151,7 +162,9 @@ body {
     background-color: var(--secondary-color);
 }
 
-/* Portada Estilo Video en Bucle */
+/* ==========================================================================
+   4. PORTADA CON VIDEO DE FONDO (HERO SECTION)
+   ========================================================================== */
 .hero-section {
     position: relative;
     height: 100vh;
@@ -204,7 +217,9 @@ body {
     margin: 5px 10px;
 }
 
-/* Servicios */
+/* ==========================================================================
+   5. SECCIÓN DE SERVICIOS (TARJETAS E IMÁGENES)
+   ========================================================================== */
 .services-section {
     max-width: 1200px;
     margin: 0 auto;
@@ -219,11 +234,37 @@ body {
 
 .service-card {
     background-color: var(--bg-card);
-    padding: 40px 30px;
+    padding: 0 0 30px 0;
     border-radius: 8px;
     text-align: center;
     transition: var(--transition);
     border: 1px solid #2A2A30;
+    overflow: hidden;
+}
+
+.card-image-container {
+    width: 100%;
+    height: 180px;
+    background-color: #121214;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #2A2A30;
+}
+
+.card-image-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.service-card h3 {
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
+    padding: 0 20px;
+}
+
+.service-card p {
+    color: var(--text-muted);
+    padding: 0 20px;
 }
 
 .service-card:hover {
@@ -232,16 +273,9 @@ body {
     box-shadow: 0 10px 20px rgba(227, 27, 35, 0.15);
 }
 
-.service-card h3 {
-    font-size: 1.4rem;
-    margin-bottom: 1rem;
-}
-
-.service-card p {
-    color: var(--text-muted);
-}
-
-/* Nosotros */
+/* ==========================================================================
+   6. SECCIÓN SOBRE NOSOTROS
+   ========================================================================== */
 .about-section {
     background-color: #16161a;
     padding: 100px 24px;
@@ -265,7 +299,9 @@ body {
     font-size: 1.1rem;
 }
 
-/* Contacto y Formulario */
+/* ==========================================================================
+   7. SECCIÓN DE CONTACTO Y FORMULARIO
+   ========================================================================== */
 .contact-section {
     max-width: 1200px;
     margin: 0 auto;
@@ -323,7 +359,9 @@ body {
     border-color: var(--primary-color);
 }
 
-/* Footer con Inversión de Color para Forzar Logos Blancos */
+/* ==========================================================================
+   8. FOOTER Y REDES SOCIALES POR CÓDIGO (INFALIBLES EN GITHUB)
+   ========================================================================== */
 .footer {
     background-color: #0b0b0c;
     text-align: center;
@@ -340,33 +378,54 @@ body {
     margin-bottom: 20px;
 }
 
-.footer-socials a {
+.social-btn {
     display: flex;
     align-items: center;
     justify-content: center;
     background-color: #1e1e24;       
     border: 2px solid #2a2a30;       
-    padding: 12px;                  /* Un poquito más de espacio */
     border-radius: 50%;
     width: 50px;
     height: 50px;
     transition: var(--transition);
 }
 
-.footer-socials a img {
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
-    filter: invert(1);              /* TRUCO MÁGICO: Convierte tus imágenes negras a blanco puro */
+.social-btn svg {
+    width: 22px;
+    height: 22px;
+    fill: #FFFFFF; /* Color por defecto blanco */
+    transition: var(--transition);
 }
 
-.footer-socials a:hover {
+/* Efectos Hover de Redes Sociales */
+.social-btn:hover {
     transform: translateY(-4px);
-    border-color: var(--primary-color);
-    box-shadow: 0 0 12px rgba(227, 27, 35, 0.4);
-    background-color: #121214;
 }
 
+.social-btn.whatsapp:hover {
+    border-color: #25D366;
+    background-color: rgba(37, 211, 102, 0.1);
+    box-shadow: 0 0 12px rgba(37, 211, 102, 0.4);
+}
+.social-btn.whatsapp:hover svg { fill: #25D366; }
+
+.social-btn.instagram:hover {
+    border-color: #E1306C;
+    background-color: rgba(225, 48, 108, 0.1);
+    box-shadow: 0 0 12px rgba(225, 48, 108, 0.4);
+}
+.social-btn.instagram:hover svg { fill: #E1306C; }
+
+.social-btn.facebook:hover {
+    border-color: #1877F2;
+    background-color: rgba(24, 119, 242, 0.1);
+    box-shadow: 0 0 12px rgba(24, 119, 242, 0.4);
+}
+.social-btn.facebook:hover svg { fill: #1877F2; }
+
+/* ==========================================================================
+   9. MEDIA QUERIES (DISEÑO RESPONSIVO)
+   ========================================================================== */
 @media screen and (max-width: 960px) {
     .nav-menu {
         position: fixed;
@@ -378,9 +437,11 @@ body {
         height: calc(100vh - 80px);
         transition: var(--transition);
     }
-    .nav-menu.active { left: 0; }
-    .nav-links { padding: 2rem; width: 100%; display: block; }
-    .menu-toggle { display: block; }
-    .hero-content h1 { font-size: 2.2rem; }
-    .contact-container { grid-template-columns: 1fr; }
-}
+    
+    .nav-menu.active { 
+        left: 0; 
+    }
+    
+    .nav-links { 
+        padding: 2rem; 
+        width: 100%; 
