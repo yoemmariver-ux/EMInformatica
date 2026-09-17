@@ -3,127 +3,150 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Servicios Tecnológicos & Soluciones Digitales</title>
+    <title>ES Informática | Servicio Técnico y Soluciones Digitales</title>
+    <!-- Hojas de estilo y Fuentes -->
     <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://googleapis.com">
+    <link rel="preconnect" href="https://gstatic.com" crossorigin>
+    <link href="https://googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <!-- Iconos de FontAwesome -->
+    <link rel="stylesheet" href="https://cloudflare.com">
 </head>
 <body>
-    <header class="navbar">
-        <div class="logo">
-            <span class="logo-accent">&lt;/&gt;</span> TechSoluciones
-        </div>
-        <nav>
-            <ul class="nav-links">
-                <li><a href="#servicios">Servicios</a></li>
-                <li><a href="#dj-musica">DJ & Producción</a></li>
-                <li><a href="#portafolio">Portafolio</a></li>
-                <li><a href="#contacto" class="btn-nav">Contacto</a></li>
+
+    <!-- Barra de Navegación -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="#inicio" class="nav-logo">
+                <!-- Reemplaza 'logo.png' por la ruta o nombre real de tu imagen de logo -->
+                <img src="logo.png" alt="ES Informática Logo">
+                <span>ES INFORMÁTICA</span>
+            </a>
+            <div class="menu-toggle" id="mobile-menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#inicio" class="nav-links">Inicio</a></li>
+                <li><a href="#servicios" class="nav-links">Servicios</a></li>
+                <li><a href="#nosotros" class="nav-links">Nosotros</a></li>
+                <li><a href="#contacto" class="nav-links">Contacto</a></li>
             </ul>
-        </nav>
+        </div>
+    </nav>
+
+    <!-- Sección de Inicio (Hero) -->
+    <header id="inicio" class="hero-section">
+        <div class="hero-content">
+            <h1>Soluciones Tecnológicas y Creativas a tu Medida</h1>
+            <p>En <strong>ES Informática</strong> potenciamos tus ideas y reparamos tus equipos con la máxima calidad y confianza del mercado.</p>
+            <div class="hero-buttons">
+                <a href="#servicios" class="btn btn-primary">Ver Servicios</a>
+                <a href="#contacto" class="btn btn-secondary">Contáctanos</a>
+            </div>
+        </div>
     </header>
 
-    <section class="hero">
-        <div class="hero-content">
-            <span class="badge">Innovación & Tecnología</span>
-            <h1>Soluciones Integrales en <span class="text-gradient">Tecnología & Diseño</span></h1>
-            <p>Mantenimiento de equipos, desarrollo web profesional, diseño de marca y servicios audiovisuales / DJ para tus eventos.</p>
-            <div class="hero-buttons">
-                <a href="#servicios" class="btn btn-primary">Nuestros Servicios</a>
-                <a href="#contacto" class="btn btn-secondary">Cotizar Proyecto</a>
+    <!-- Sección de Servicios -->
+    <section id="servicios" class="services-section">
+        <div class="section-title">
+            <h2>Nuestros Servicios</h2>
+            <div class="underline"></div>
+        </div>
+        <div class="services-grid">
+            <!-- Servicio 1 -->
+            <div class="service-card">
+                <div class="icon-box"><i class="fa-solid fa-laptop-medical"></i></div>
+                <h3>Servicio Técnico</h3>
+                <p>Reparación integral de computadoras, notebooks y hardware. Diagnóstico certero y repuestos de calidad.</p>
+            </div>
+            <!-- Servicio 2 -->
+            <div class="service-card">
+                <div class="icon-box"><i class="fa-solid fa-screwdriver-wrench"></i></div>
+                <h3>Mantenimiento</h3>
+                <p>Optimización preventiva y correctiva de sistemas operativos, limpieza interna física y remoción de malware.</p>
+            </div>
+            <!-- Servicio 3 -->
+            <div class="service-card">
+                <div class="icon-box"><i class="fa-solid fa-code"></i></div>
+                <h3>Creación de Páginas Web</h3>
+                <p>Diseño y desarrollo de sitios web profesionales, tiendas online y landing pages autoadministrables.</p>
+            </div>
+            <!-- Servicio 4 -->
+            <div class="service-card">
+                <div class="icon-box"><i class="fa-solid fa-scanner-image"></i></div>
+                <h3>Digitalización de Imágenes</h3>
+                <p>Conversión de fotografías analógicas, documentos y archivos físicos a formatos digitales de alta fidelidad.</p>
+            </div>
+            <!-- Servicio 5 -->
+            <div class="service-card">
+                <div class="icon-box"><i class="fa-solid fa-video"></i></div>
+                <h3>Edición de Video</h3>
+                <p>Montaje y postproducción audiovisual profesional para redes sociales, publicidad, eventos y empresas.</p>
+            </div>
+            <!-- Servicio 6 -->
+            <div class="service-card">
+                <div class="icon-box"><i class="fa-solid fa-compact-disc"></i></div>
+                <h3>Servicio de DJ y Sonido</h3>
+                <p>Ambientación musical profesional, equipamiento de audio de última generación e iluminación para todo tipo de eventos.</p>
             </div>
         </div>
     </section>
 
-    <section id="servicios" class="container">
-        <h2 class="section-title">Servicios Técnicos & Digitales</h2>
-        <div class="grid-cards">
-            <div class="card">
-                <div class="card-icon">💻</div>
-                <h3>Reparación de PCs</h3>
-                <p>Mantenimiento preventivo y correctivo, optimización de sistema, limpieza de virus y diagnóstico de hardware.</p>
-                <a href="#contacto" class="card-link">Consultar &rarr;</a>
-            </div>
-            <div class="card">
-                <div class="card-icon">🎨</div>
-                <h3>Diseño Gráfico & Logos</h3>
-                <p>Creación de identidad visual, logotipos vectoriales, piezas publicitarias y banners para redes sociales.</p>
-                <a href="#contacto" class="card-link">Consultar &rarr;</a>
-            </div>
-            <div class="card">
-                <div class="card-icon">🌐</div>
-                <h3>Desarrollo Web</h3>
-                <p>Páginas web modernas, rápidas y adaptadas a móviles, listas para posicionar tu negocio en internet.</p>
-                <a href="#contacto" class="card-link">Consultar &rarr;</a>
+    <!-- Sección Sobre Nosotros -->
+    <section id="nosotros" class="about-section">
+        <div class="about-container">
+            <div class="about-text">
+                <h2>Sobre ES Informática</h2>
+                <div class="underline-left"></div>
+                <p>Somos un equipo multidisciplinario apasionado por la tecnología y la innovación creativa. Nos esforzamos por ofrecer un soporte técnico informático de excelencia y soluciones digitales integrales que ayuden tanto a particulares como a empresas a alcanzar sus objetivos.</p>
+                <p>Nuestra misión es fusionar la precisión del soporte técnico con la creatividad digital para ofrecerte soluciones completas en un solo lugar.</p>
             </div>
         </div>
     </section>
 
-    <section id="dj-musica" class="container">
-        <div class="dj-banner">
-            <div class="dj-info">
-                <span class="badge-accent">Nuevo Servicio</span>
-                <h2>DJ & Producción Musical</h2>
-                <p>Ambientación de eventos, sets en vivo, edición de audio, remezclas y producción musical personalizada para tus proyectos visuales o eventos especiales.</p>
-                <ul class="dj-list">
-                    <li>🎧 DJ para eventos y fiestas privadas</li>
-                    <li>🎚️ Edición y limpieza de pistas de audio</li>
-                    <li>🔊 Sonorización y ambientación musical</li>
-                </ul>
-                <a href="#contacto" class="btn btn-primary">Contratar DJ / Audio</a>
-            </div>
+    <!-- Sección de Contacto -->
+    <section id="contacto" class="contact-section">
+        <div class="section-title">
+            <h2>Contacto</h2>
+            <div class="underline"></div>
         </div>
-    </section>
-
-    <section id="portafolio" class="container">
-        <h2 class="section-title">Portafolio & Galería</h2>
-        <div class="portfolio-grid">
-            <div class="portfolio-item">
-                <div class="img-placeholder">Proyectos Web & Apps</div>
-                <h4>Diseños Web Personalizados</h4>
-            </div>
-            <div class="portfolio-item">
-                <div class="img-placeholder">Identidad Visual & Logos</div>
-                <h4>Branding & Marcas</h4>
-            </div>
-            <div class="portfolio-item">
-                <div class="img-placeholder">Sets & Ediciones DJ</div>
-                <h4>Producción de Audio</h4>
-            </div>
-        </div>
-    </section>
-
-    <section id="contacto" class="container">
-        <div class="contact-card">
-            <h2>¿Tenés un proyecto en mente?</h2>
-            <p>Escribinos para cotizar mantenimiento, diseño web, marcas o contrataciones para eventos.</p>
-            <form id="contactForm">
-                <div class="form-group">
-                    <input type="text" id="nombre" placeholder="Tu Nombre" required>
+        <div class="contact-container">
+            <div class="contact-info">
+                <h3>¿Tienes alguna consulta?</h3>
+                <p>Escríbenos o visítanos. Responderemos a la brevedad para brindarte el presupuesto técnico que necesitas.</p>
+                <div class="info-item">
+                    <i class="fa-solid fa-envelope"></i>
+                    <p>contacto@esinformatica.com</p>
                 </div>
-                <div class="form-group">
-                    <input type="email" id="email" placeholder="Tu Email" required>
+                <div class="info-item">
+                    <i class="fa-solid fa-phone"></i>
+                    <p>+54 123 456789</p>
                 </div>
-                <div class="form-group">
-                    <select id="servicio">
-                        <option value="reparacion">Reparación de Computadoras</option>
-                        <option value="diseno">Diseño Gráfico & Logos</option>
-                        <option value="web">Desarrollo Web</option>
-                        <option value="dj">Servicios de DJ / Audio</option>
-                    </select>
-                </div>
-                <div class="form-group">
-                    <textarea id="mensaje" placeholder="Detalles de la consulta..." rows="4" required></textarea>
-                </div>
-                <button type="submit" class="btn btn-primary btn-block">Enviar Consulta</button>
-            </form>
-            <div id="formResponse" class="response-message"></div>
+            </div>
+            <div class="contact-form-container">
+                <form id="contactForm">
+                    <div class="form-group">
+                        <input type="text" id="name" placeholder="Tu Nombre" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" id="email" placeholder="Tu Correo Electrónico" required>
+                    </div>
+                    <div class="form-group">
+                        <textarea id="message" rows="5" placeholder="¿En qué servicio estás interesado? Cuéntanos los detalles..." required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-block">Enviar Mensaje</button>
+                </form>
+            </div>
         </div>
     </section>
 
-    <footer>
-        <p>&copy; 2026 TechSoluciones. Todos los derechos reservados.</p>
+    <!-- Footer / Pie de página -->
+    <footer class="footer">
+        <p>&copy; 2026 ES Informática. Todos los derechos reservados. | Diseño y Servicio Técnico Profesional.</p>
     </footer>
 
-    <script src="script.js"></script>
+    <script src="javascript.js"></script>
 </body>
 </html>
