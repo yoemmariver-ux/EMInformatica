@@ -232,12 +232,6 @@ body {
     box-shadow: 0 10px 20px rgba(227, 27, 35, 0.15);
 }
 
-.icon-box {
-    font-size: 2.5rem;
-    color: var(--primary-color);
-    margin-bottom: 1.5rem;
-}
-
 .service-card h3 {
     font-size: 1.4rem;
     margin-bottom: 1rem;
@@ -300,12 +294,6 @@ body {
     margin-bottom: 1.5rem;
 }
 
-.info-item i {
-    font-size: 1.5rem;
-    color: var(--primary-color);
-    margin-right: 15px;
-}
-
 .contact-form-container {
     background-color: var(--bg-card);
     padding: 40px;
@@ -335,7 +323,7 @@ body {
     border-color: var(--primary-color);
 }
 
-/* Footer y Estilos de Redes Sociales Vectoriales */
+/* Footer Ajustado para forzar visualización de imágenes */
 .footer {
     background-color: #0b0b0c;
     text-align: center;
@@ -348,33 +336,29 @@ body {
 .footer-socials {
     display: flex;
     justify-content: center;
-    gap: 25px;
+    gap: 20px;
     margin-bottom: 20px;
 }
 
-.social-icon {
-    font-size: 1.8rem;
-    color: var(--text-muted);
+.footer-socials a {
+    display: inline-block;
+    background-color: var(--secondary-color); /* Fondo blanco para hacer contraste */
+    padding: 8px;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
     transition: var(--transition);
-    text-decoration: none;
 }
 
-.social-icon.whatsapp-icon:hover {
-    color: #25D366;
-    filter: drop-shadow(0 0 8px rgba(37, 211, 102, 0.5));
-    transform: scale(1.2);
+.footer-socials a img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
 }
 
-.social-icon.instagram-icon:hover {
-    color: #E1306C;
-    filter: drop-shadow(0 0 8px rgba(225, 48, 108, 0.5));
-    transform: scale(1.2);
-}
-
-.social-icon.facebook-icon:hover {
-    color: #1877F2;
-    filter: drop-shadow(0 0 8px rgba(24, 119, 242, 0.5));
-    transform: scale(1.2);
+.footer-socials a:hover {
+    transform: scale(1.15);
+    background-color: var(--primary-color); /* Cambia a rojo al pasar el mouse */
 }
 
 @media screen and (max-width: 960px) {
