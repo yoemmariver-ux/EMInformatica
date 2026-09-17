@@ -323,7 +323,7 @@ body {
     border-color: var(--primary-color);
 }
 
-/* Footer Ajustado para forzar visualización de imágenes */
+/* Footer con Alto Contraste para Iconos Transparentes Blancos */
 .footer {
     background-color: #0b0b0c;
     text-align: center;
@@ -341,9 +341,12 @@ body {
 }
 
 .footer-socials a {
-    display: inline-block;
-    background-color: var(--secondary-color); /* Fondo blanco para hacer contraste */
-    padding: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #1e1e24;       /* Fondo oscuro tecnológico */
+    border: 2px solid #2a2a30;       /* Borde sutil inicial */
+    padding: 10px;
     border-radius: 50%;
     width: 50px;
     height: 50px;
@@ -356,9 +359,12 @@ body {
     object-fit: contain;
 }
 
+/* Efecto Hover: Al pasar el mouse se ilumina con el rojo de tu marca */
 .footer-socials a:hover {
-    transform: scale(1.15);
-    background-color: var(--primary-color); /* Cambia a rojo al pasar el mouse */
+    transform: translateY(-4px);
+    border-color: var(--primary-color);
+    box-shadow: 0 0 12px rgba(227, 27, 35, 0.4);
+    background-color: #121214;
 }
 
 @media screen and (max-width: 960px) {
