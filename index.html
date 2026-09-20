@@ -101,6 +101,7 @@
             </div>
         </div>
     </section>
+
     <!-- Sección Sobre Nosotros -->
     <section id="nosotros" class="about-section">
         <div class="about-container">
@@ -158,57 +159,14 @@
     <!-- Footer -->
     <footer class="footer">
         <div class="footer-socials">
-            <a href="https://wa.me" target="_blank" class="social-box"><img src="watsapp.png" alt="WhatsApp"></a>
+            <a href="https://wa.me/5491164483503" target="_blank" class="social-box"><img src="watsapp.png" alt="WhatsApp"></a>
             <a href="https://instagram.com" target="_blank" class="social-box"><img src="instagram.png" alt="Instagram"></a>
             <a href="https://facebook.com" target="_blank" class="social-box"><img src="facebook.png" alt="Facebook"></a>
         </div>
         <p>&copy; 2026 ES Informática. Todos los derechos reservados. | Diseño y Servicio Técnico Profesional.</p>
     </footer>
 
-    <!-- Programación Intrinseca Libre de Fallos de Memoria Caché -->
-    <script>
-        // Menú hamburguesa responsivo móvil
-        const menu = document.querySelector('#mobile-menu');
-        const menuLinks = document.querySelector('.nav-menu');
-
-        menu.addEventListener('click', function() {
-            menu.classList.toggle('is-active');
-            menuLinks.classList.toggle('active');
-        });
-
-        document.querySelectorAll('.nav-links').forEach(item => {
-            item.addEventListener('click', () => {
-                menu.classList.remove('is-active');
-                menuLinks.classList.remove('active');
-            });
-        });
-
-        // Lógica de Envío Limpia con URL pura concatenada (Sin corchetes conflictivos)
-        document.getElementById('contactForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-
-            const name = document.getElementById('name').value.trim();
-            const category = document.getElementById('category').value;
-            const message = document.getElementById('message').value.trim();
-
-            if(name === "" || category === "" || message === "") {
-                alert("Por favor, completa todos los campos del formulario.");
-                return;
-            }
-
-            // Unificación manual de strings limpia para navegadores antiguos
-            const textoSaludo = "¡Hola ES Informática!";
-            const textoCliente = "Mi nombre es: " + name;
-            const textoServicio = "Servicio solicitado: " + category;
-            const textoDetalles = "Detalles: " + message;
-
-            // Enlace final de redirección universal con codificación de caracteres segura
-            const urlSegura = "https://wa.me?text=" 
-                + encodeURIComponent(textoSaludo + "\n\n" + textoCliente + "\n\n" + textoServicio + "\n\n" + textoDetalles);
-
-            window.open(urlSegura, '_blank');
-            this.reset();
-        });
-    </script>
+    <!-- Archivo JS Externo con la lógica directa de WhatsApp -->
+    <script src="javascript.js"></script>
 </body>
 </html>
