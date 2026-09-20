@@ -17,42 +17,43 @@ if (menu && menuLinks) {
     });
 }
 
-// Lógica de Envío del Formulario DIRECTO a WhatsApp
+// Lógica de Envío de Mensaje Directo a tu WhatsApp
 const contactForm = document.getElementById('contactForm');
 
 if (contactForm) {
     contactForm.addEventListener('submit', function(e) {
-        e.preventDefault(); // Evita que la página se recargue
+        e.preventDefault(); // Evita que la página web se recargue
 
-        // Tu número de WhatsApp sin signos ni espacios (Código de país 54 + 9 + área + número)
-        const phone = "5491164483503";
+        // Tu número directo configurado de Argentina (+54 9 11 6448-3503)
+        const telefono = "5491164483503";
 
-        // Capturar datos del formulario
+        // Capturar los datos que completó el usuario
         const name = document.getElementById('name').value.trim();
         const category = document.getElementById('category').value;
         const message = document.getElementById('message').value.trim();
 
+        // Validación de campos vacíos
         if (name === "" || category === "" || message === "") {
             alert("Por favor, completa todos los campos del formulario.");
             return;
         }
 
-        // Crear el texto con saltos de línea normales
-        const rawMessage = `¡Hola! Me contacto desde la web.\n\n` +
-                           `*Nombre:* ${name}\n` +
-                           `*Servicio solicitado:* ${category}\n\n` +
-                           `*Detalles de la consulta:*\n${message}`;
+        // Construir el texto del mensaje
+        const textoConsulta = `¡Hola! Te escribo desde la página web.\n\n` +
+                              `*Nombre:* ${name}\n` +
+                              `*Servicio solicitado:* ${category}\n\n` +
+                              `*Consulta:*\n${message}`;
 
-        // Codificar el mensaje completo para que no falle ningún carácter especial
-        const encodedMessage = encodeURIComponent(rawMessage);
+        // Codificar el texto para que la URL sea válida
+        const mensajeCodificado = encodeURIComponent(textoConsulta);
 
-        // Enlace optimizado con la API oficial de WhatsApp
-        const whatsappUrl = `https://api.whatsapp.com/send?phone=${phone}&text=${encodedMessage}`;
+        // Crear la URL directa a tu chat de WhatsApp
+        const urlWhatsApp = `https://wa.me/${telefono}?text=${mensajeCodificado}`;
 
-        // Redirecciona directamente a la conversación de WhatsApp
-        window.location.href = whatsappUrl;
+        // Abrir directamente la aplicación o WhatsApp Web
+        window.open(urlWhatsApp, '_blank');
 
-        // Limpiar el formulario
+        // Limpiar los campos del formulario tras presionar el botón
         contactForm.reset();
     });
 }
