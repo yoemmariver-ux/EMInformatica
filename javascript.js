@@ -17,14 +17,14 @@ if (menu && menuLinks) {
     });
 }
 
-// Lógica de Envío del Formulario DIRECTO con el número incrustado de forma fija
+// Lógica de Envío del Formulario DIRECTO a WhatsApp
 const contactForm = document.getElementById('contactForm');
 
 if (contactForm) {
     contactForm.addEventListener('submit', function(e) {
         e.preventDefault(); // Evita que la página se recargue
 
-        // Tu número de WhatsApp configurado
+        // Tu número de WhatsApp sin signos ni espacios (Código de país 54 + 9 + área + número)
         const phone = "5491164483503";
 
         // Capturar datos del formulario
@@ -37,15 +37,21 @@ if (contactForm) {
             return;
         }
 
-        // Formatear el mensaje estructurado
-        const textMessage = `¡Hola!%0A%0AMi nombre es: *${encodeURIComponent(name)}*%0A%0A*Servicio solicitado:*%0A_ ${encodeURIComponent(category)} _%0A%0A*Detalles de la consulta:*%0A${encodeURIComponent(message)}`;
+        // Crear el texto con saltos de línea normales
+        const rawMessage = `¡Hola! Me contacto desde la web.\n\n` +
+                           `*Nombre:* ${name}\n` +
+                           `*Servicio solicitado:* ${category}\n\n` +
+                           `*Detalles de la consulta:*\n${message}`;
 
-        // Enlace corregido a WhatsApp apuntando a tu número (+5491164483503)
-        const whatsappUrl = `https://wa.me/${phone}?text=${textMessage}`;
+        // Codificar el mensaje completo para que no falle ningún carácter especial
+        const encodedMessage = encodeURIComponent(rawMessage);
 
-        // Abrir la ventana del chat de inmediato
-        window.open(whatsappUrl, '_blank');
-        
+        // Enlace optimizado con la API oficial de WhatsApp
+        const whatsappUrl = `https://api.whatsapp.com/send?phone=${phone}&text=${encodedMessage}`;
+
+        // Redirecciona directamente a la conversación de WhatsApp
+        window.location.href = whatsappUrl;
+
         // Limpiar el formulario
         contactForm.reset();
     });
