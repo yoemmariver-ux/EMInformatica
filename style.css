@@ -217,7 +217,7 @@ body {
     margin: 5px 10px;
 }
 
-/* Estadísticas de Impacto */
+/* Estadísticas de Impacto (Para 3 Tarjetas Centradas) */
 .stats-section {
     background-color: var(--bg-card);
     padding: 50px 24px;
@@ -226,10 +226,10 @@ body {
 }
 
 .stats-grid {
-    max-width: 1200px;
+    max-width: 900px;
     margin: 0 auto;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
     gap: 30px;
     text-align: center;
 }
