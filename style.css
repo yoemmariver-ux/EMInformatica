@@ -148,13 +148,13 @@ body {
 /* Portada Estilo Video en Bucle */
 .hero-section {
     position: relative;
-    height: 100vh;
+    min-height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
     overflow: hidden;
     text-align: center;
-    padding: 60px 24px 0 24px; /* Agregado padding superior para empujar el contenedor */
+    padding: 90px 24px 40px 24px;
 }
 
 .hero-video {
@@ -181,33 +181,36 @@ body {
 }
 
 .hero-content {
-    margin-top: -30px; /* Eleva el contenido completo hacia arriba */
+    margin-top: 0;
+    width: 100%;
+    max-width: 800px;
 }
 
-/* Logo animado centrado posicionado más arriba y sin borde */
+/* Logo animado centrado */
 .hero-logo-centered {
-    width: 280px;               /* Tamaño del logo centrado */
-    max-width: 80%;             /* Adaptabilidad en móviles */
+    width: 280px;               
+    max-width: 80%;             
     height: auto;
     display: block;
-    margin: 0 auto 0.8rem auto; /* Disminuido el margen inferior para subirlo */
-    mix-blend-mode: screen;     /* Oculta el fondo negro del video */
-    filter: none;               /* Eliminado cualquier resplandor/borde */
+    margin: 0 auto 1rem auto;
+    mix-blend-mode: screen;     
+    filter: none;               
     border: none;
     outline: none;
 }
 
 .hero-content h1 {
-    font-size: 3.5rem;
-    margin-bottom: 1.5rem;
+    font-size: 3.2rem;
+    margin-bottom: 1.2rem;
     font-weight: 700;
+    line-height: 1.2;
     text-shadow: 0 4px 10px rgba(0,0,0,0.5);
 }
 
 .hero-content p {
-    font-size: 1.2rem;
+    font-size: 1.15rem;
     max-width: 700px;
-    margin: 0 auto 2.5rem;
+    margin: 0 auto 2rem;
     color: var(--text-muted);
 }
 
@@ -373,7 +376,7 @@ body {
     color: var(--text-main);
 }
 
-/* Footer Sólido Adaptado para Tus Imágenes Locales Fijas */
+/* Footer */
 .footer {
     background-color: #0b0b0c;
     text-align: center;
@@ -416,6 +419,7 @@ body {
     box-shadow: 0 0 12px rgba(227, 27, 35, 0.4);
 }
 
+/* REGULAR Y OPTIMIZAR CELULARES / DISPOSITIVOS MÓVILES */
 @media screen and (max-width: 960px) {
     .nav-menu {
         position: fixed;
@@ -430,6 +434,35 @@ body {
     .nav-menu.active { left: 0; }
     .nav-links { padding: 2rem; width: 100%; display: block; }
     .menu-toggle { display: block; }
-    .hero-content h1 { font-size: 2.2rem; }
-    .contact-container { grid-template-columns: 1fr; }
+
+    /* Ajustes visuales para la portada en pantallas pequeñas */
+    .hero-section {
+        padding-top: 100px;
+        padding-bottom: 30px;
+    }
+
+    .hero-logo-centered {
+        width: 160px; /* Reducción de tamaño del logo para móviles */
+        margin-bottom: 0.5rem;
+    }
+
+    .hero-content h1 {
+        font-size: 1.8rem; /* Reducción del tamaño del título */
+        margin-bottom: 0.8rem;
+    }
+
+    .hero-content p {
+        font-size: 0.95rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .hero-buttons .btn {
+        display: block;
+        width: 100%;
+        margin: 8px 0;
+    }
+
+    .contact-container { 
+        grid-template-columns: 1fr; 
+    }
 }
