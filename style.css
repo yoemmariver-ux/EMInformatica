@@ -186,6 +186,19 @@ body {
     z-index: -1;
 }
 
+/* Estilos para el video logo animado centrado */
+.hero-logo-centered {
+    width: 280px;               /* Ancho del logo centrado */
+    max-width: 80%;             /* Adaptabilidad para pantallas móviles */
+    height: auto;
+    display: block;
+    margin: 0 auto 1.5rem auto;    /* Centra el elemento y da margen abajo */
+    mix-blend-mode: screen;     /* Oculta el fondo negro del video para integrarlo */
+    filter: drop-shadow(0 0 15px rgba(227, 27, 35, 0.5)); /* Resplandor rojo en bordes */
+    border: none;
+    outline: none;
+}
+
 .hero-content h1 {
     font-size: 3.5rem;
     margin-bottom: 1.5rem;
@@ -422,6 +435,7 @@ body {
     .hero-content h1 { font-size: 2.2rem; }
     .contact-container { grid-template-columns: 1fr; }
 }
+
 /* Forzar al logotipo oscuro de la barra de navegación a iluminarse en blanco brillante */
 .nav-logo img {
     height: 50px;
