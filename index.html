@@ -5,9 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ES Informática | Servicio Técnico y Soluciones Digitales</title>
     <link rel="stylesheet" href="style.css">
-    <link rel="preconnect" href="https://googleapis.com">
-    <link rel="preconnect" href="https://gstatic.com" crossorigin>
-    <link href="https://googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
 
@@ -25,6 +25,7 @@
             <ul class="nav-menu">
                 <li><a href="#inicio" class="nav-links">Inicio</a></li>
                 <li><a href="#servicios" class="nav-links">Servicios</a></li>
+                <li><a href="#proceso" class="nav-links">Proceso</a></li>
                 <li><a href="#nosotros" class="nav-links">Nosotros</a></li>
                 <li><a href="#contacto" class="nav-links">Contacto</a></li>
             </ul>
@@ -40,7 +41,7 @@
         <div class="hero-overlay"></div>
         
         <div class="hero-content">
-            <!-- LOGO ANIMADO MP4 CENTRADO (MÁS ARRIBA Y SIN BORDES) -->
+            <!-- LOGO ANIMADO MP4 CENTRADO -->
             <video autoplay loop muted playsinline class="hero-logo-centered">
                 <source src="logo-animado.mp4" type="video/mp4">
             </video>
@@ -53,6 +54,28 @@
             </div>
         </div>
     </header>
+
+    <!-- Sección Estadísticas de Impacto -->
+    <section class="stats-section">
+        <div class="stats-grid">
+            <div class="stat-card">
+                <h3>+500</h3>
+                <p>Equipos Reparados</p>
+            </div>
+            <div class="stat-card">
+                <h3>+120</h3>
+                <p>Proyectos Web</p>
+            </div>
+            <div class="stat-card">
+                <h3>100%</h3>
+                <p>Garantía de Servicio</p>
+            </div>
+            <div class="stat-card">
+                <h3>24/7</h3>
+                <p>Atención WhatsApp</p>
+            </div>
+        </div>
+    </section>
 
     <!-- Sección de Servicios -->
     <section id="servicios" class="services-section">
@@ -102,6 +125,36 @@
                 </div>
                 <h3>Servicio de DJ y Sonido</h3>
                 <p>Ambientación musical profesional, equipamiento de audio de última generación e iluminación para todo tipo de eventos.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección Proceso de Trabajo -->
+    <section id="proceso" class="process-section">
+        <div class="section-title">
+            <h2>¿Cómo Trabajamos?</h2>
+            <div class="underline"></div>
+        </div>
+        <div class="process-grid">
+            <div class="process-step">
+                <span class="step-num">01</span>
+                <h3>Consulta</h3>
+                <p>Escribinos detallando tu necesidad o falla del equipo vía formulario o WhatsApp.</p>
+            </div>
+            <div class="process-step">
+                <span class="step-num">02</span>
+                <h3>Presupuesto</h3>
+                <p>Evaluamos el caso detalladamente y te brindamos una cotización clara sin costo oculto.</p>
+            </div>
+            <div class="process-step">
+                <span class="step-num">03</span>
+                <h3>Ejecución</h3>
+                <p>Reparamos o desarrollamos tu proyecto con repuestos y estándares de primer nivel.</p>
+            </div>
+            <div class="process-step">
+                <span class="step-num">04</span>
+                <h3>Entrega</h3>
+                <p>Probás el resultado y contás con nuestro respaldo técnico y garantía garantizada.</p>
             </div>
         </div>
     </section>
@@ -160,6 +213,11 @@
         </div>
     </section>
 
+    <!-- Botón Flotante de WhatsApp Directo -->
+    <a href="https://wa.me/5491164483503" class="whatsapp-float" target="_blank" aria-label="Enviar mensaje por WhatsApp">
+        <img src="watsapp.png" alt="WhatsApp">
+    </a>
+
     <!-- Footer -->
     <footer class="footer">
         <div class="footer-socials">
@@ -170,7 +228,7 @@
         <p>&copy; 2026 ES Informática. Todos los derechos reservados. | Diseño y Servicio Técnico Profesional.</p>
     </footer>
 
-    <!-- Archivo JS Externo con la lógica directa de WhatsApp -->
+    <!-- Archivo JS Externo -->
     <script src="javascript.js"></script>
 </body>
 </html>

@@ -17,14 +17,14 @@ if (menu && menuLinks) {
     });
 }
 
-// Lógica de Envío de Mensaje DIRECTO a tu WhatsApp
+// Lógica de Envío de Mensaje DIRECTO a WhatsApp
 const contactForm = document.getElementById('contactForm');
 
 if (contactForm) {
     contactForm.addEventListener('submit', function(e) {
-        e.preventDefault(); // Evita recargar la página
+        e.preventDefault(); 
 
-        // Tu número en formato internacional para WhatsApp Argentina (+54 9 11 6448-3503)
+        // Teléfono en formato internacional para WhatsApp (+54 9 11 6448-3503)
         const telefono = "5491164483503";
 
         // Capturar los datos del formulario
@@ -46,10 +46,10 @@ if (contactForm) {
         // Codificar el texto de forma segura para URL
         const mensajeCodificado = encodeURIComponent(textoConsulta);
 
-        // Crear enlace directo a tu número
+        // Crear enlace directo a WhatsApp
         const urlWhatsApp = `https://wa.me/${telefono}?text=${mensajeCodificado}`;
 
-        // Abrir directamente la app de WhatsApp o WhatsApp Web en tu chat
+        // Abrir app de WhatsApp o WhatsApp Web
         window.open(urlWhatsApp, '_blank');
 
         // Limpiar el formulario
