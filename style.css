@@ -113,12 +113,6 @@ body {
     letter-spacing: 1px;
 }
 
-.nav-logo img {
-    height: 50px;
-    margin-right: 10px;
-    object-fit: contain;
-}
-
 .nav-menu {
     display: flex;
     align-items: center;
@@ -160,7 +154,7 @@ body {
     justify-content: center;
     overflow: hidden;
     text-align: center;
-    padding: 0 24px;
+    padding: 60px 24px 0 24px; /* Agregado padding superior para empujar el contenedor */
 }
 
 .hero-video {
@@ -186,15 +180,19 @@ body {
     z-index: -1;
 }
 
-/* Estilos para el video logo animado centrado */
+.hero-content {
+    margin-top: -30px; /* Eleva el contenido completo hacia arriba */
+}
+
+/* Logo animado centrado posicionado más arriba y sin borde */
 .hero-logo-centered {
-    width: 280px;               /* Ancho del logo centrado */
-    max-width: 80%;             /* Adaptabilidad para pantallas móviles */
+    width: 280px;               /* Tamaño del logo centrado */
+    max-width: 80%;             /* Adaptabilidad en móviles */
     height: auto;
     display: block;
-    margin: 0 auto 1.5rem auto;    /* Centra el elemento y da margen abajo */
-    mix-blend-mode: screen;     /* Oculta el fondo negro del video para integrarlo */
-    filter: drop-shadow(0 0 15px rgba(227, 27, 35, 0.5)); /* Resplandor rojo en bordes */
+    margin: 0 auto 0.8rem auto; /* Disminuido el margen inferior para subirlo */
+    mix-blend-mode: screen;     /* Oculta el fondo negro del video */
+    filter: none;               /* Eliminado cualquier resplandor/borde */
     border: none;
     outline: none;
 }
@@ -434,12 +432,4 @@ body {
     .menu-toggle { display: block; }
     .hero-content h1 { font-size: 2.2rem; }
     .contact-container { grid-template-columns: 1fr; }
-}
-
-/* Forzar al logotipo oscuro de la barra de navegación a iluminarse en blanco brillante */
-.nav-logo img {
-    height: 50px;
-    margin-right: 10px;
-    object-fit: contain;
-    filter: brightness(0) invert(1); /* Aplica el filtro de inversión de color */
 }
