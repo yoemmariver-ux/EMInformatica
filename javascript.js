@@ -77,7 +77,7 @@ if (contactForm) {
     var TELEFONO = '5491164483503';
     var SALUDO = '¡Hola! Soy el asistente virtual de ES Informática. ¿En qué te puedo ayudar?';
     var NO_SE = 'No tengo una respuesta para eso. Si querés, una persona del equipo te atiende por WhatsApp.';
-    var MENU = ['servicios', 'precios', 'proceso', 'garantia', 'contacto'];
+    var MENU = ['servicios', 'precios', 'proceso', 'ubicacion', 'contacto'];
     var LISTA_SERVICIOS = ['tecnico', 'mantenimiento', 'web', 'digitalizacion', 'video', 'dj'];
 
     // ---------- PREGUNTAS Y RESPUESTAS ----------
@@ -136,9 +136,15 @@ if (contactForm) {
             respuesta: 'Todos nuestros trabajos cuentan con garantía y respaldo técnico. Probás el resultado antes de la entrega.'
         },
         {
+            id: 'ubicacion', boton: 'Ubicación', whatsapp: false,
+            enlace: { url: 'https://maps.app.goo.gl/N5hiQgxN8LtYXAEo6', etiqueta: 'Ver en Google Maps' },
+            claves: ['ubicacion', 'direccion', 'donde', 'queda', 'mapa', 'llegar', 'local', 'ubicados'],
+            respuesta: 'Podés ver dónde estamos en Google Maps y llegar directo desde ahí.'
+        },
+        {
             id: 'contacto', boton: 'Contacto', whatsapp: true,
             claves: ['contact', 'telefono', 'tel', 'mail', 'email', 'correo', 'whatsapp', 'wsp', 'numero', 'llamar', 'hablar', 'comunic', 'escribir'],
-            respuesta: 'Podés contactarnos por:\n• Email: contacto@esinformatica.com\n• Teléfono / WhatsApp: +54 9 11 6448-3503\n• El formulario de contacto de esta página'
+            respuesta: 'Podés contactarnos por:\n• Teléfono / WhatsApp: +54 9 11 6448-3503\n• Instagram: @es.informatica1\n• El formulario de contacto de esta página'
         }
     ];
 
@@ -218,6 +224,17 @@ if (contactForm) {
         bajar();
     }
 
+    function agregarBotonEnlace(url, etiqueta) {
+        var a = document.createElement('a');
+        a.className = 'asis-opcion';
+        a.href = url;
+        a.target = '_blank';
+        a.rel = 'noopener noreferrer';
+        a.textContent = etiqueta;
+        mensajes.appendChild(a);
+        bajar();
+    }
+
     function agregarOpciones(ids) {
         var anteriores = mensajes.querySelectorAll('.asis-opciones');
         anteriores.forEach(function (el) { el.remove(); });
@@ -256,6 +273,9 @@ if (contactForm) {
         setTimeout(function () {
             if (tema) {
                 agregarMensaje(tema.respuesta, 'bot');
+                if (tema.enlace) {
+                    agregarBotonEnlace(tema.enlace.url, tema.enlace.etiqueta);
+                }
                 if (tema.whatsapp) {
                     agregarBotonWhatsapp('Quiero consultar por: ' + tema.boton, 'Consultar por WhatsApp');
                 }

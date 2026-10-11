@@ -857,3 +857,52 @@ body {
     .asis-burbuja,
     .asis-globo { transition: none; }
 }
+
+
+/* ==========================================================
+   UBICACIÓN (Google Maps)
+   ========================================================== */
+.location-section {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 90px 24px;
+}
+
+.location-card {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 30px;
+    background-color: var(--bg-card);
+    border: 1px solid #2A2A30;
+    border-radius: 8px;
+    padding: 40px;
+    text-align: center;
+}
+
+.location-info h3 {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+}
+
+.location-info p {
+    color: var(--text-muted);
+    max-width: 600px;
+    margin: 0 auto 1.8rem;
+}
+
+.location-map {
+    width: 100%;
+    height: 380px;
+    border: 0;
+    border-radius: 8px;
+}
+
+@media screen and (max-width: 960px) {
+    .location-card { padding: 28px 20px; }
+    .location-map { height: 300px; }
+}
+
+/* Botón de enlace suelto dentro del chat (ej. "Ver en Google Maps") */
+.asis-mensajes > .asis-opcion {
+    align-self: flex-start;
+}
