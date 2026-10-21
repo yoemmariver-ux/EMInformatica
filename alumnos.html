@@ -56,23 +56,23 @@ var Q=[
 ["Fórmulas","Si A1=3 y B1=4, ¿qué da `=A1+B1*2`?",["14","11","10","24"],1,"Primero se multiplica (4×2=8) y después se suma (3+8=11)."],
 ["Fórmulas","¿Cuántas celdas tiene el rango A1:B2?",["2","3","4","6"],2,"A1, A2, B1 y B2."]
 ];
-var app=document.getElementById("app"),topic="Todos",list=[],i=0,score=0,done=false,pick=-1,name="",wrong=[];
+var app=document.getElementById("app"),topic="Todos",list=[],i=0,score=0,done=false,pick=-1,name="",wrong=[],resp=[];
 function esc(s){return s.replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;")}
 function fmt(s){return esc(s).replace(/`([^`]+)`/g,"<code>$1</code>")}
 function shuf(a){a=a.slice();for(var k=a.length-1;k>0;k--){var j=Math.floor(Math.random()*(k+1));var t=a[k];a[k]=a[j];a[j]=t}return a}
 var topics=["Todos"].concat(Q.map(function(q){return q[0]}).filter(function(v,k,a){return a.indexOf(v)===k}));
 function home(){
- var h='<h1>Práctica de Excel</h1><p class="s">Respondé desde el celular, a tu ritmo. Es solo para practicar.</p><div class="card"><label for="n">Tu nombre</label><input id="n" placeholder="Nombre y apellido" value="'+esc(name)+'"><div class="chips">';
+ var h='<h1>Práctica de Excel</h1><p class="s">Respondé desde el celular, a tu ritmo. Es solo para practicar.</p><div class="card"><label for="n">Tu nombre</label><input id="n" placeholder="Nombre y apellido" value="'+esc(name)+'"><p class="err" id="ne"></p><div class="chips">';
  topics.forEach(function(t){h+='<button class="chip'+(t===topic?' on':'')+'" data-t="'+t+'">'+t+'</button>'});
  h+='</div><button class="btn" id="go">Empezar</button></div>';
  app.innerHTML=h;
  app.querySelectorAll(".chip").forEach(function(b){b.onclick=function(){name=document.getElementById("n").value;topic=b.dataset.t;home()}});
- document.getElementById("go").onclick=function(){name=document.getElementById("n").value;start()};
+ document.getElementById("go").onclick=function(){name=document.getElementById("n").value.trim();if(!name){document.getElementById("ne").textContent="Escribí tu nombre y apellido para empezar.";return}start()};
 }
 function start(){
  var base=Q.filter(function(q){return topic==="Todos"||q[0]===topic});
  list=shuf(base).map(function(q){var o=q[2].map(function(t,k){return{t:t,c:k===q[3]}});return{tp:q[0],q:q[1],o:shuf(o),e:q[4]}});
- i=0;score=0;pick=-1;wrong=[];show();
+ i=0;score=0;pick=-1;wrong=[];resp=[];show();
 }
 function show(){
  if(i>=list.length)return end();
@@ -80,17 +80,27 @@ function show(){
  q.o.forEach(function(o,k){var c="opt";if(pick>=0){if(o.c)c+=" ok";else if(k===pick)c+=" no"}h+='<button class="'+c+'" data-k="'+k+'"'+(pick>=0?' disabled':'')+'>'+fmt(o.t)+'</button>'});
  if(pick>=0){h+='<div class="fb"><strong>'+(q.o[pick].c?"¡Correcto!":"No es esa.")+'</strong> '+fmt(q.e)+'</div><button class="btn" id="nx">'+(i+1===list.length?"Ver resultado":"Siguiente")+'</button>'}
  h+='</div>';app.innerHTML=h;
- app.querySelectorAll(".opt").forEach(function(b){b.onclick=function(){if(pick>=0)return;pick=+b.dataset.k;if(q.o[pick].c)score++;else wrong.push(q.tp);show()}});
+ app.querySelectorAll(".opt").forEach(function(b){b.onclick=function(){if(pick>=0)return;pick=+b.dataset.k;if(q.o[pick].c)score++;else wrong.push(q.tp);resp.push((q.o[pick].c?"OK":"MAL")+" | "+q.tp+" | "+q.q.replace(/`/g,"")+" | eligió: "+q.o[pick].t);show()}});
  var nx=document.getElementById("nx");if(nx)nx.onclick=function(){i++;pick=-1;show()};
+}
+function enviar(p,rep){
+ var st=document.getElementById("st");
+ if(!URL_REGISTRO){return}
+ st.textContent="Enviando tu resultado al profesor…";
+ fetch(URL_REGISTRO,{method:"POST",mode:"no-cors",headers:{"Content-Type":"text/plain;charset=utf-8"},body:JSON.stringify({nombre:name,tema:topic,aciertos:score,total:list.length,porcentaje:p,repasar:rep.join(", "),detalle:resp.join("\n")})})
+ .then(function(){st.textContent="Resultado enviado al profesor."})
+ .catch(function(){st.textContent="No se pudo enviar. Usá el botón de WhatsApp para mandarlo."});
 }
 function end(){
  var p=Math.round(score/list.length*100),rep=wrong.filter(function(v,k,a){return a.indexOf(v)===k});
  var msg="Práctica de Excel"+(name?" - "+name:"")+": "+score+" de "+list.length+" ("+p+"%)"+(rep.length?". Repasar: "+rep.join(", "):"");
- var h='<div class="card"><h1 style="text-align:center">¡Terminaste!</h1><div class="big">'+score+' / '+list.length+'</div><p class="s" style="text-align:center">'+p+'% de respuestas correctas</p>'+(rep.length?'<p>Te conviene repasar: <strong>'+esc(rep.join(", "))+'</strong>.</p>':'<p>¡Excelente, sin errores!</p>')+'<a class="btn" target="_blank" rel="noopener" href="https://wa.me/?text='+encodeURIComponent(msg)+'">Enviar mi resultado por WhatsApp</a><button class="btn" id="again">Practicar de nuevo</button></div>';
- app.innerHTML=h;document.getElementById("again").onclick=home;
+ var h='<div class="card"><h1 style="text-align:center">¡Terminaste!</h1><div class="big">'+score+' / '+list.length+'</div><p class="s" style="text-align:center">'+p+'% de respuestas correctas</p>'+(rep.length?'<p>Te conviene repasar: <strong>'+esc(rep.join(", "))+'</strong>.</p>':'<p>¡Excelente, sin errores!</p>')+'<a class="btn" target="_blank" rel="noopener" href="https://wa.me/?text='+encodeURIComponent(msg)+'">Enviar mi resultado por WhatsApp</a><p class="s" id="st" style="text-align:center;margin-top:12px"></p><button class="btn" id="again">Practicar de nuevo</button></div>';
+ app.innerHTML=h;document.getElementById("again").onclick=home;enviar(p,rep);
 }
 // ===== CÓDIGOS DE ACCESO: editá esta lista para cambiarlos =====
 var CODIGOS=["excel2026"];
+// ===== REGISTRO DE RESULTADOS: pegá acá el link de tu Google Apps Script (entre las comillas) =====
+var URL_REGISTRO="https://script.google.com/macros/s/AKfycbycsU33WbnE7_d_KfEpBNnkMMm743-iLxmxDaT4k_pDC9U42gQosLVlr_fSezeGNGF5/exec";
 function gate(){
  app.innerHTML='<h1>Zona de alumnos</h1><p class="s">Ingresá el código que te dio el profesor.</p><div class="card"><input id="cod" placeholder="Código de acceso" autocomplete="off" autocapitalize="none"><p class="err" id="er"></p><button class="btn" id="ok">Entrar</button></div>';
  function check(){var v=document.getElementById("cod").value.trim().toLowerCase();
