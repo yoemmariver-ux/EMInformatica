@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Alumnos | ES Informática</title>
+<meta name="robots" content="noindex,nofollow">
+<style>
+:root{--bg:#f4f7f5;--card:#fff;--tx:#1b2a22;--mu:#5b6b62;--ac:#1d7a46;--acx:#fff;--ok:#d9f2e3;--okb:#1d7a46;--no:#fde2e0;--nob:#c0392b;--bd:#d5ded8;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){color-scheme:dark;--bg:#121a15;--card:#1c2822;--tx:#e8f0eb;--mu:#9fb0a6;--ac:#43b878;--acx:#08140d;--ok:#1d4a30;--okb:#43b878;--no:#4a2220;--nob:#ef7b70;--bd:#33443a}}
+:root[data-theme="dark"]{color-scheme:dark;--bg:#121a15;--card:#1c2822;--tx:#e8f0eb;--mu:#9fb0a6;--ac:#43b878;--acx:#08140d;--ok:#1d4a30;--okb:#43b878;--no:#4a2220;--nob:#ef7b70;--bd:#33443a}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+body{margin:0;background:var(--bg);color:var(--tx);font:16px/1.45 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+main{max-width:560px;margin:0 auto;padding:16px}
+h1{font-size:1.4rem;margin:8px 0 4px}
+p.s{color:var(--mu);margin:0 0 16px}
+.card{background:var(--card);border:1px solid var(--bd);border-radius:14px;padding:16px;margin-bottom:12px}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin:12px 0}
+.chip{border:1px solid var(--bd);background:var(--card);color:var(--tx);border-radius:999px;padding:8px 14px;font-size:.95rem}
+.chip.on{background:var(--ac);color:var(--acx);border-color:var(--ac)}
+button{font:inherit;cursor:pointer}
+.opt{display:block;width:100%;text-align:left;background:var(--card);color:var(--tx);border:1.5px solid var(--bd);border-radius:12px;padding:14px;margin:8px 0}
+.opt.ok{background:var(--ok);border-color:var(--okb)}
+.opt.no{background:var(--no);border-color:var(--nob)}
+.btn{display:block;width:100%;background:var(--ac);color:var(--acx);border:0;border-radius:12px;padding:14px;font-weight:600;text-align:center;text-decoration:none;box-sizing:border-box;margin-top:12px}
+input{width:100%;box-sizing:border-box;font:inherit;padding:12px;border-radius:10px;border:1px solid var(--bd);background:var(--card);color:var(--tx)}
+code{background:var(--bg);border:1px solid var(--bd);border-radius:6px;padding:1px 6px;font-family:ui-monospace,Menlo,Consolas,monospace;font-size:.92em}
+.bar{height:6px;background:var(--bd);border-radius:4px;overflow:hidden;margin-bottom:12px}
+.bar i{display:block;height:100%;background:var(--ac)}
+.fb{margin-top:10px;color:var(--mu)}
+.big{font-size:2.4rem;font-weight:700;text-align:center;margin:8px 0}
+.top{display:flex;justify-content:space-between;align-items:center;font-size:.9rem;color:var(--mu);margin-bottom:8px}.top a{color:var(--ac)}.err{color:var(--nob);margin:8px 0 0;min-height:1.2em}
+</style>
+</head>
+<body>
+<main><div class="top"><strong>ES Informática</strong><a href="index.html">Volver al sitio</a></div><div id="app"></div></main>
+<script>
+var Q=[
+["Suma","Una celda tiene `=SUMA(A1:A5)`. ¿Qué hace?",["Suma solo A1 y A5","Suma todas las celdas de A1 a A5","Cuenta las celdas de A1 a A5","Multiplica A1 por A5"],1,"Los dos puntos indican un rango: desde A1 hasta A5, ambas incluidas."],
+["Suma","Si A1=10, A2=20 y A3=30, ¿qué da `=SUMA(A1;A3)`?",["60","40","30","20"],1,"Con punto y coma se suman solo las celdas nombradas (A1 y A3). Con dos puntos (A1:A3) daría 60."],
+["Promedio","Si A1=4, A2=6 y A3=8, ¿qué da `=PROMEDIO(A1:A3)`?",["6","18","8","4"],0,"Promedio = suma dividida la cantidad: (4+6+8)/3 = 6."],
+["Promedio","A1=10, A2 vacía, A3=20. ¿Qué da `=PROMEDIO(A1:A3)`?",["10","15","30","20"],1,"PROMEDIO ignora las celdas vacías: (10+20)/2 = 15."],
+["Max y Min","¿Qué da `=MAX(5;12;7)`?",["5","7","12","24"],2,"MAX devuelve el valor más grande."],
+["Max y Min","A1=8, A2=3, A3=9. ¿Qué da `=MIN(A1:A3)`?",["3","8","9","20"],0,"MIN devuelve el valor más chico del rango."],
+["Contar","¿Qué cuenta la función CONTAR?",["Celdas con cualquier contenido","Solo celdas con números","Solo celdas con texto","Solo celdas vacías"],1,"CONTAR cuenta únicamente celdas que tienen números."],
+["Contar","A1=5, A2=\"hola\", A3=8, A4 vacía. ¿Qué da `=CONTAR(A1:A4)`?",["4","3","2","1"],2,"Solo A1 y A3 son números."],
+["Contara","Con los mismos datos (5, \"hola\", 8, celda vacía), ¿qué da `=CONTARA(A1:A4)`?",["2","3","4","1"],1,"CONTARA cuenta las celdas que no están vacías: A1, A2 y A3."],
+["Contara","¿Cuál es la diferencia entre CONTAR y CONTARA?",["Ninguna, son iguales","CONTAR cuenta números y CONTARA cuenta celdas no vacías","CONTAR cuenta texto y CONTARA números","CONTARA cuenta solo celdas vacías"],1,"La A final se puede recordar como «todo lo que no esté vacío»."],
+["Función SI","Con A1=4, ¿qué muestra `=SI(A1>=6;\"Aprobado\";\"Desaprobado\")`?",["Aprobado","Desaprobado","4","Error"],1,"4 no es mayor o igual a 6, así que la condición es falsa y muestra el tercer argumento."],
+["Función SI","¿Cuáles son los 3 argumentos de la función SI, en orden?",["Valor si verdadero; prueba lógica; valor si falso","Prueba lógica; valor si verdadero; valor si falso","Valor si falso; valor si verdadero; prueba lógica","Rango; criterio; resultado"],1,"Primero la pregunta, después qué hacer si es verdadera y por último si es falsa."],
+["Función Y","Con A1=7 y B1=3, ¿qué da `=Y(A1>5;B1>5)`?",["VERDADERO","FALSO","7","3"],1,"Y exige que se cumplan todas las condiciones. B1 no es mayor que 5."],
+["Función Y","¿Cuándo devuelve VERDADERO la función Y?",["Cuando se cumple al menos una condición","Cuando se cumplen todas las condiciones","Cuando no se cumple ninguna","Siempre"],1,"Y = todas las condiciones a la vez."],
+["Función O","Con A1=7 y B1=3, ¿qué da `=O(A1>5;B1>5)`?",["VERDADERO","FALSO","7","Error"],0,"O necesita que se cumpla al menos una condición, y A1>5 se cumple."],
+["Combinadas","Con A1=7 y B1=5, ¿qué muestra `=SI(Y(A1>=6;B1>=6);\"Promociona\";\"Rinde final\")`?",["Promociona","Rinde final","VERDADERO","Error"],1,"B1 no llega a 6, entonces Y da FALSO y SI muestra «Rinde final»."],
+["Fórmulas","¿Con qué símbolo empieza toda fórmula en Excel?",["@","#","=","$"],2,"Sin el signo = Excel toma lo escrito como texto."],
+["Fórmulas","Si A1=3 y B1=4, ¿qué da `=A1+B1*2`?",["14","11","10","24"],1,"Primero se multiplica (4×2=8) y después se suma (3+8=11)."],
+["Fórmulas","¿Cuántas celdas tiene el rango A1:B2?",["2","3","4","6"],2,"A1, A2, B1 y B2."]
+];
+var app=document.getElementById("app"),topic="Todos",list=[],i=0,score=0,done=false,pick=-1,name="",wrong=[];
+function esc(s){return s.replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;")}
+function fmt(s){return esc(s).replace(/`([^`]+)`/g,"<code>$1</code>")}
+function shuf(a){a=a.slice();for(var k=a.length-1;k>0;k--){var j=Math.floor(Math.random()*(k+1));var t=a[k];a[k]=a[j];a[j]=t}return a}
+var topics=["Todos"].concat(Q.map(function(q){return q[0]}).filter(function(v,k,a){return a.indexOf(v)===k}));
+function home(){
+ var h='<h1>Práctica de Excel</h1><p class="s">Respondé desde el celular, a tu ritmo. Es solo para practicar.</p><div class="card"><label for="n">Tu nombre</label><input id="n" placeholder="Nombre y apellido" value="'+esc(name)+'"><div class="chips">';
+ topics.forEach(function(t){h+='<button class="chip'+(t===topic?' on':'')+'" data-t="'+t+'">'+t+'</button>'});
+ h+='</div><button class="btn" id="go">Empezar</button></div>';
+ app.innerHTML=h;
+ app.querySelectorAll(".chip").forEach(function(b){b.onclick=function(){name=document.getElementById("n").value;topic=b.dataset.t;home()}});
+ document.getElementById("go").onclick=function(){name=document.getElementById("n").value;start()};
+}
+function start(){
+ var base=Q.filter(function(q){return topic==="Todos"||q[0]===topic});
+ list=shuf(base).map(function(q){var o=q[2].map(function(t,k){return{t:t,c:k===q[3]}});return{tp:q[0],q:q[1],o:shuf(o),e:q[4]}});
+ i=0;score=0;pick=-1;wrong=[];show();
+}
+function show(){
+ if(i>=list.length)return end();
+ var q=list[i],h='<div class="bar"><i style="width:'+(i/list.length*100)+'%"></i></div><p class="s">'+q.tp+' · pregunta '+(i+1)+' de '+list.length+'</p><div class="card"><strong>'+fmt(q.q)+'</strong>';
+ q.o.forEach(function(o,k){var c="opt";if(pick>=0){if(o.c)c+=" ok";else if(k===pick)c+=" no"}h+='<button class="'+c+'" data-k="'+k+'"'+(pick>=0?' disabled':'')+'>'+fmt(o.t)+'</button>'});
+ if(pick>=0){h+='<div class="fb"><strong>'+(q.o[pick].c?"¡Correcto!":"No es esa.")+'</strong> '+fmt(q.e)+'</div><button class="btn" id="nx">'+(i+1===list.length?"Ver resultado":"Siguiente")+'</button>'}
+ h+='</div>';app.innerHTML=h;
+ app.querySelectorAll(".opt").forEach(function(b){b.onclick=function(){if(pick>=0)return;pick=+b.dataset.k;if(q.o[pick].c)score++;else wrong.push(q.tp);show()}});
+ var nx=document.getElementById("nx");if(nx)nx.onclick=function(){i++;pick=-1;show()};
+}
+function end(){
+ var p=Math.round(score/list.length*100),rep=wrong.filter(function(v,k,a){return a.indexOf(v)===k});
+ var msg="Práctica de Excel"+(name?" - "+name:"")+": "+score+" de "+list.length+" ("+p+"%)"+(rep.length?". Repasar: "+rep.join(", "):"");
+ var h='<div class="card"><h1 style="text-align:center">¡Terminaste!</h1><div class="big">'+score+' / '+list.length+'</div><p class="s" style="text-align:center">'+p+'% de respuestas correctas</p>'+(rep.length?'<p>Te conviene repasar: <strong>'+esc(rep.join(", "))+'</strong>.</p>':'<p>¡Excelente, sin errores!</p>')+'<a class="btn" target="_blank" rel="noopener" href="https://wa.me/?text='+encodeURIComponent(msg)+'">Enviar mi resultado por WhatsApp</a><button class="btn" id="again">Practicar de nuevo</button></div>';
+ app.innerHTML=h;document.getElementById("again").onclick=home;
+}
+// ===== CÓDIGOS DE ACCESO: editá esta lista para cambiarlos =====
+var CODIGOS=["excel2026"];
+function gate(){
+ app.innerHTML='<h1>Zona de alumnos</h1><p class="s">Ingresá el código que te dio el profesor.</p><div class="card"><input id="cod" placeholder="Código de acceso" autocomplete="off" autocapitalize="none"><p class="err" id="er"></p><button class="btn" id="ok">Entrar</button></div>';
+ function check(){var v=document.getElementById("cod").value.trim().toLowerCase();
+  if(CODIGOS.some(function(c){return c.toLowerCase()===v})){try{sessionStorage.setItem("esinf_ok","1")}catch(e){}home()}
+  else document.getElementById("er").textContent="Código incorrecto. Revisalo e intentá de nuevo."}
+ document.getElementById("ok").onclick=check;
+ document.getElementById("cod").onkeydown=function(e){if(e.key==="Enter")check()};
+}
+var okAcc=false;try{okAcc=sessionStorage.getItem("esinf_ok")==="1"}catch(e){}
+if(okAcc)home();else gate();
+</script>
+</body>
+</html>
