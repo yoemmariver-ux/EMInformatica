@@ -100,11 +100,12 @@ function end(){
 // ===== CÓDIGOS DE ACCESO: editá esta lista para cambiarlos =====
 var CODIGOS=["excel2026"];
 // ===== REGISTRO DE RESULTADOS: pegá acá el link de tu Google Apps Script (entre las comillas) =====
-var URL_REGISTRO="https://script.google.com/macros/s/AKfycbycsU33WbnE7_d_KfEpBNnkMMm743-iLxmxDaT4k_pDC9U42gQosLVlr_fSezeGNGF5/exec";
+var URL_REGISTRO="";
+function nz(t){return t.normalize("NFD").replace(/[\u0300-\u036f]/g,"").replace(/\s+/g,"").toLowerCase()}
 function gate(){
  app.innerHTML='<h1>Zona de alumnos</h1><p class="s">Ingresá el código que te dio el profesor.</p><div class="card"><input id="cod" placeholder="Código de acceso" autocomplete="off" autocapitalize="none"><p class="err" id="er"></p><button class="btn" id="ok">Entrar</button></div>';
- function check(){var v=document.getElementById("cod").value.trim().toLowerCase();
-  if(CODIGOS.some(function(c){return c.toLowerCase()===v})){try{sessionStorage.setItem("esinf_ok","1")}catch(e){}home()}
+ function check(){var v=nz(document.getElementById("cod").value);
+  if(CODIGOS.some(function(c){return nz(c)===v})){try{sessionStorage.setItem("esinf_ok","1")}catch(e){}home()}
   else document.getElementById("er").textContent="Código incorrecto. Revisalo e intentá de nuevo."}
  document.getElementById("ok").onclick=check;
  document.getElementById("cod").onkeydown=function(e){if(e.key==="Enter")check()};
