@@ -100,7 +100,7 @@ function end(){
 // ===== CÓDIGOS DE ACCESO: editá esta lista para cambiarlos =====
 var CODIGOS=["excel2026"];
 // ===== REGISTRO DE RESULTADOS: pegá acá el link de tu Google Apps Script (entre las comillas) =====
-var URL_REGISTRO="";
+var URL_REGISTRO="https://script.google.com/macros/s/AKfycbyzazT9Of8LvB-B6wGtXmkOaMxWFxq5TM7-g48Grcw__ILT_GDpNTikeaVpW7yk4cw/exec";
 function nz(t){return t.normalize("NFD").replace(/[\u0300-\u036f]/g,"").replace(/\s+/g,"").toLowerCase()}
 function gate(){
  app.innerHTML='<h1>Zona de alumnos</h1><p class="s">Ingresá el código que te dio el profesor.</p><div class="card"><input id="cod" placeholder="Código de acceso" autocomplete="off" autocapitalize="none"><p class="err" id="er"></p><button class="btn" id="ok">Entrar</button></div>';
