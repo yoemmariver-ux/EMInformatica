@@ -50,11 +50,24 @@ var Q=[
 ["Función SI","¿Cuáles son los 3 argumentos de la función SI, en orden?",["Valor si verdadero; prueba lógica; valor si falso","Prueba lógica; valor si verdadero; valor si falso","Valor si falso; valor si verdadero; prueba lógica","Rango; criterio; resultado"],1,"Primero la pregunta, después qué hacer si es verdadera y por último si es falsa."],
 ["Función Y","Con A1=7 y B1=3, ¿qué da `=Y(A1>5;B1>5)`?",["VERDADERO","FALSO","7","3"],1,"Y exige que se cumplan todas las condiciones. B1 no es mayor que 5."],
 ["Función Y","¿Cuándo devuelve VERDADERO la función Y?",["Cuando se cumple al menos una condición","Cuando se cumplen todas las condiciones","Cuando no se cumple ninguna","Siempre"],1,"Y = todas las condiciones a la vez."],
-["Función O","Con A1=7 y B1=3, ¿qué da `=O(A1>5;B1>5)`?",["VERDADERO","FALSO","7","Error"],0,"O necesita que se cumpla al menos una condición, y A1>5 se cumple."],
 ["Combinadas","Con A1=7 y B1=5, ¿qué muestra `=SI(Y(A1>=6;B1>=6);\"Promociona\";\"Rinde final\")`?",["Promociona","Rinde final","VERDADERO","Error"],1,"B1 no llega a 6, entonces Y da FALSO y SI muestra «Rinde final»."],
 ["Fórmulas","¿Con qué símbolo empieza toda fórmula en Excel?",["@","#","=","$"],2,"Sin el signo = Excel toma lo escrito como texto."],
 ["Fórmulas","Si A1=3 y B1=4, ¿qué da `=A1+B1*2`?",["14","11","10","24"],1,"Primero se multiplica (4×2=8) y después se suma (3+8=11)."],
-["Fórmulas","¿Cuántas celdas tiene el rango A1:B2?",["2","3","4","6"],2,"A1, A2, B1 y B2."]
+["Fórmulas","¿Cuántas celdas tiene el rango A1:B2?",["2","3","4","6"],2,"A1, A2, B1 y B2."],
+["Sintaxis","Escribís `SUMA(A1:A3)` en una celda, sin el signo igual. ¿Qué pasa?",["Calcula la suma igual","Muestra el texto tal cual, sin calcular","Da un error de valor","Suma solo A1"],1,"Sin el = Excel toma lo escrito como texto y no calcula nada."],
+["Sintaxis","¿Cuál de estas fórmulas está bien escrita?",["`SUMA(A1:A3)=`","`=SUMA A1:A3`","`=SUMA(A1:A3)`","`=SUMA[A1:A3]`"],2,"La estructura es: signo =, nombre de la función y los datos entre paréntesis."],
+["Sintaxis","En las fórmulas de la clase, ¿qué signo separa un dato de otro dentro de los paréntesis, como en `=SUMA(A1;A3)`?",["Dos puntos (:)","Punto y coma (;)","Punto (.)","Barra (/)"],1,"El punto y coma separa los datos. Según la configuración de la computadora puede ser una coma, pero en clase usamos punto y coma."],
+["Sintaxis","¿Para qué sirven los dos puntos en `A1:A5`?",["Para dividir A1 por A5","Para indicar un rango de celdas, de A1 a A5","Para separar dos funciones","Para multiplicar"],1,"Los dos puntos significan «desde ... hasta» y arman un rango."],
+["Sintaxis","Cuando escribís un texto dentro de una fórmula, como Aprobado, ¿cómo va?",["Entre paréntesis","Entre corchetes","Entre comillas","Sin ningún signo"],2,"El texto siempre va entre comillas, por ejemplo `\"Aprobado\"`. Los números y las celdas van sin comillas."],
+["Sintaxis","A la fórmula `=SI(A1>5;\"Sí\";\"No\"` le falta algo. ¿Qué es?",["El signo igual","Cerrar el paréntesis al final","Un punto y coma más","Comillas en A1"],1,"Cada paréntesis que se abre tiene que cerrarse. Falta el ) del final."],
+["Sintaxis","¿Cuál es la forma correcta de sumar el contenido de A1 y B1 sin usar funciones?",["`A1+B1`","`=A1+B1`","`=A1 B1`","`=A1,B1`"],1,"Empieza con = y lleva el signo + entre las dos celdas."],
+["Errores","¿Qué significa el error `#¡DIV/0!`?",["Se dividió por cero o por una celda vacía","Se escribió mal el nombre de una función","Se usó texto en una cuenta","La columna es muy angosta"],0,"Excel no puede dividir por cero. En otros programas aparece como `#DIV/0!`."],
+["Errores","Escribís `=10/0` en una celda. ¿Qué error aparece?",["`#¡VALOR!`","`#¡DIV/0!`","`#¡REF!`","`#N/A`"],1,"Dividir por cero da `#¡DIV/0!`."],
+["Errores","Escribís `=PROMEDOI(A1:A3)`, con el nombre de la función mal escrito. ¿Qué error aparece?",["`#¿NOMBRE?`","`#¡DIV/0!`","`#¡REF!`","`#N/A`"],0,"`#¿NOMBRE?` aparece cuando Excel no reconoce el nombre de una función o de algo que escribiste."],
+["Errores","A1 tiene la palabra \"hola\" y escribís `=A1+5`. ¿Qué error aparece?",["`#¡DIV/0!`","`#¿NOMBRE?`","`#¡VALOR!`","`#¡REF!`"],2,"`#¡VALOR!` aparece cuando la fórmula necesita un número y encuentra texto u otro dato que no sirve."],
+["Errores","Una fórmula usa la celda C3 y después borrás esa columna. ¿Qué error aparece?",["`#¡REF!`","`#¡DIV/0!`","`#¡VALOR!`","`#N/A`"],0,"`#¡REF!` significa que la referencia dejó de existir porque se borró la celda o la columna a la que apuntaba."],
+["Errores","¿Qué significa el error `#N/A`?",["Se dividió por cero","El valor que se busca no está disponible","Faltan comillas","La columna es muy angosta"],1,"`#N/A` significa «no disponible». Aparece, por ejemplo, cuando una búsqueda no encuentra el dato."],
+["Errores","Una celda muestra `#####` en vez de un número. ¿Qué pasa?",["La fórmula está mal escrita","Se dividió por cero","La columna es muy angosta para mostrar el número","Se borró una celda"],2,"No es un error de la fórmula: el número no entra en el ancho de la columna. Se arregla ensanchándola."]
 ];
 var app=document.getElementById("app"),topic="Todos",list=[],i=0,score=0,done=false,pick=-1,name="",wrong=[],resp=[];
 function esc(s){return s.replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;")}
